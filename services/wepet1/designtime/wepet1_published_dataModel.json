@@ -1,0 +1,12 @@
+{
+  "cascadeEnabled" : false,
+  "dataLockingOptions" : {
+    "versionColumnName" : "VERSION",
+    "lockingStrategy" : "NONE"
+  },
+  "description" : "wepet1",
+  "draft" : false,
+  "name" : "wepet1",
+  "packageName" : "com.wepet.wepet1",
+  "tables" : [ ]
+}

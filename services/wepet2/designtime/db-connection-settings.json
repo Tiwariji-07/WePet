@@ -1,0 +1,63 @@
+{
+  "username" : "{WM_CLOUD_MYSQL_USER_NAME}",
+  "password" : "{WM_CLOUD_MYSQL_PASSWORD}",
+  "url" : "jdbc:mariadb://{WM_CLOUD_MYSQL_HOST}/wepet2?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&createDatabaseIfNotExist=true",
+  "driverClass" : "org.mariadb.jdbc.Driver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.MySQLDialect",
+  "serviceId" : "wepet2",
+  "packageName" : "com.wepet.wepet2",
+  "dbType" : "MySQL",
+  "host" : "{WM_CLOUD_MYSQL_HOST}",
+  "dbName" : "wepet2",
+  "port" : null,
+  "schemaName" : null,
+  "tableFilter" : [ {
+    "table" : "adoption",
+    "schema" : null
+  }, {
+    "table" : "donation",
+    "schema" : null
+  }, {
+    "table" : "volunteer",
+    "schema" : null
+  }, {
+    "table" : "login",
+    "schema" : null
+  }, {
+    "table" : "animal",
+    "schema" : null
+  }, {
+    "table" : "user",
+    "schema" : null
+  }, {
+    "table" : "complain",
+    "schema" : null
+  }, {
+    "table" : "animal_type",
+    "schema" : null
+  }, {
+    "table" : "service",
+    "schema" : null
+  }, {
+    "table" : "organization",
+    "schema" : null
+  } ],
+  "schemaFilter" : [ ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "update",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "transactionTimeout" : 30,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : false,
+    "reason" : null,
+    "message" : null,
+    "reImport" : false
+  },
+  "readOnly" : false,
+  "metadataDialect" : ""
+}

@@ -1,0 +1,169 @@
+<wm-page pagetitle="Ngo Adoption" name="page1">
+    <wm-header content="NgoHeader" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="NgoPanel" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-container name="container1">
+                <wm-layoutgrid name="layoutgrid4_2">
+                    <wm-gridrow name="gridrow10_2">
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn23_1">
+                            <wm-label padding="unset 0.5em" name="label9" caption="Animals"></wm-label>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn24_2" horizontalalign="right">
+                            <wm-button class="btn-primary" caption="Add for adoption" type="button" margin="unset 0.5em 1em 0.5em" name="button1" on-click="Widgets.dialog1.open()"></wm-button>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow11_1">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn25_1">
+                            <wm-tabs type="static" statehandler="URL" name="tabs1">
+                                <wm-tabpane name="tabpane1" title="All pets">
+                                    <wm-list listclass="list-group" itemsperrow="xs-1 sm-2 md-3 lg-3" template="true" template-name="Personal Spotlight" class="list-card" statehandler="none" name="AnimalList1" dataset="bind:Variables.Wepet2AnimalData1.dataSet"
+                                        navigation="Scroll">
+                                        <wm-listtemplate layout="media" name="listtemplate1">
+                                            <wm-card name="Picture" picturesource="bind:Variables.Wepet2AnimalData1.dataSet[$i].imagePath">
+                                                <wm-card-content padding="1.25em" name="card_content1">
+                                                    <wm-label name="Name" class="h4 text-muted" width="100%" caption="bind:Variables.Wepet2AnimalData1.dataSet[$i].name" whitespace="nowrap" margin="0px unset unset unset"></wm-label>
+                                                    <wm-label name="Title" caption="bind:Variables.Wepet2AnimalData1.dataSet[$i].breed" class="h4" margin="0px unset unset unset"></wm-label>
+                                                    <wm-label name="Description" caption="bind:Variables.Wepet2AnimalData1.dataSet[$i].city" class="p text-muted" margin="0px unset unset unset"></wm-label>
+                                                    <wm-layoutgrid name="layoutgrid1">
+                                                        <wm-gridrow name="gridrow1">
+                                                            <wm-gridcolumn columnwidth="12" class="col-xs-6" name="gridcolumn1">
+                                                                <wm-label name="Date" caption="bind:Variables.Wepet2AnimalData1.dataSet[$i].uploadDate" class="text-muted" margin="0.6em unset unset unset" fontsize="1.143" fontunit="em"></wm-label>
+                                                            </wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                    </wm-layoutgrid>
+                                                </wm-card-content>
+                                            </wm-card>
+                                        </wm-listtemplate>
+                                    </wm-list>
+                                </wm-tabpane>
+                                <wm-tabpane name="tabpane2" title="Adopted">
+                                    <wm-list listclass="list-group" itemsperrow="xs-1 sm-2 md-3 lg-3" template="true" template-name="Personal Spotlight" class="list-card" statehandler="none" name="AnimalList1_1" dataset="bind:Variables.Wepet2AnimalData2.dataSet"
+                                        navigation="Scroll">
+                                        <wm-listtemplate layout="media" name="listtemplate2">
+                                            <wm-card name="Picture" picturesource="bind:Variables.Wepet2AnimalData2.dataSet[$i].imagePath">
+                                                <wm-card-content padding="1.25em" name="card_content2">
+                                                    <wm-label name="Name" class="h4 text-muted" width="100%" caption="bind:Variables.Wepet2AnimalData2.dataSet[$i].name" whitespace="nowrap" margin="0px unset unset unset"></wm-label>
+                                                    <wm-label name="Title" caption="bind:Variables.Wepet2AnimalData2.dataSet[$i].breed" class="h4" margin="0px unset unset unset"></wm-label>
+                                                    <wm-label name="Description" caption="bind:Variables.Wepet2AnimalData2.dataSet[$i].city" class="p text-muted" margin="0px unset unset unset"></wm-label>
+                                                    <wm-layoutgrid name="layoutgrid4_1">
+                                                        <wm-gridrow name="gridrow10_1">
+                                                            <wm-gridcolumn columnwidth="12" class="col-xs-6" name="gridcolumn24_1">
+                                                                <wm-label name="Date" caption="bind:Variables.Wepet2AnimalData2.dataSet[$i].uploadDate" class="text-muted" margin="0.6em unset unset unset" fontsize="1.143" fontunit="em"></wm-label>
+                                                            </wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                    </wm-layoutgrid>
+                                                </wm-card-content>
+                                            </wm-card>
+                                        </wm-listtemplate>
+                                    </wm-list>
+                                </wm-tabpane>
+                                <wm-tabpane name="tabpane3" title="To be adopted" content="AnimalStatus">
+                                    <wm-param name="id" value="1" type="integer"></wm-param>
+                                    <wm-param name="status" value="false" type="boolean"></wm-param>
+                                </wm-tabpane>
+                            </wm-tabs>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Add an animal for adoption" iconclass="wi wi-file-text" name="dialog1" width="700px">
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="btn-primary" caption="Close" on-click="closeDialog()" name="button2"></wm-button>
+        </wm-dialogactions>
+        <wm-liveform errormessage="" title="" iconclass="" defaultmode="Edit" dataset="bind:Variables.Wepet2AnimalData2.dataSet" captionalign="left" captionposition="top" name="AnimalLiveForm1" on-beforeservicecall="AnimalLiveForm1Beforeservicecall($event, $operation, $data, options)">
+            <wm-layoutgrid columns="3" name="layoutgrid4">
+                <wm-gridrow name="gridrow5">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn10">
+                        <wm-form-field name="name" displayname="Name" show="true" primary-key="false" generator="assigned" key="name" type="string" readonly="false" required="true" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn11">
+                        <wm-form-field name="breed" displayname="Breed" show="true" primary-key="false" generator="assigned" key="breed" type="string" readonly="false" required="false" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn12">
+                        <wm-form-field name="size" displayname="Size" show="true" primary-key="false" generator="assigned" key="size" type="string" readonly="false" widget="select" maxchars="100" dataset="bind:Variables.staticSizeVariable.dataSet" datafield="dataValue"
+                            displayfield="dataValue" placeholder="Select value"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow6">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn13">
+                        <wm-form-field name="age" displayname="Age" show="true" primary-key="false" generator="assigned" key="age" type="float" readonly="false" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value" hint="Enter age in years"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn14">
+                        <wm-form-field name="description" displayname="Description" show="true" primary-key="false" generator="assigned" key="description" type="string" readonly="false" widget="textarea" maxchars="2048" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn15">
+                        <wm-form-field name="gender" displayname="Gender" show="true" primary-key="false" generator="assigned" key="gender" type="string" widget="select" dataset="bind:Variables.staticVariableGender.dataSet" datafield="dataValue" displayfield="dataValue"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow7">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn16">
+                        <wm-form-field name="street" displayname="Street" show="true" primary-key="false" generator="assigned" key="street" type="string" readonly="false" required="true" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn17">
+                        <wm-form-field name="city" displayname="City" show="true" primary-key="false" generator="assigned" key="city" type="string" readonly="false" required="true" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn18">
+                        <wm-form-field name="district" displayname="District" show="true" primary-key="false" generator="assigned" key="district" type="string" readonly="false" required="false" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow8">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn19">
+                        <wm-form-field name="state" displayname="State" show="true" primary-key="false" generator="assigned" key="state" type="string" readonly="false" required="true" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn20">
+                        <wm-form-field name="country" displayname="Country" show="true" primary-key="false" generator="assigned" key="country" type="string" readonly="false" required="true" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn21">
+                        <wm-form-field name="pincode" displayname="Pincode" show="true" primary-key="false" generator="assigned" key="pincode" type="integer" readonly="false" required="false" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow9">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn22">
+                        <wm-form-field name="longitude" displayname="Longitude" show="false" primary-key="false" generator="assigned" key="longitude" type="big_decimal" readonly="false" required="false" step="1e-9" widget="number" inputtype="number" placeholder="Enter value"
+                            defaultvalue="bind:Variables.svGetLatLong.dataSet.results[$i].geometry.location.lng"></wm-form-field>
+                        <wm-label padding="unset 0.5em" name="label10" caption="Upload an image of pet"></wm-label>
+                        <wm-fileupload cleariconclass="wi wi-clear" cleariconhint="Clear" name="fileupload1" on-select="Variables.FileServiceUploadFile.invoke()" maxfilesize="20"></wm-fileupload>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn23">
+                        <wm-form-field name="latitude" displayname="Latitude" show="false" primary-key="false" generator="assigned" key="latitude" type="big_decimal" readonly="false" required="false" step="1e-9" widget="number" inputtype="number" placeholder="Enter value"
+                            defaultvalue="bind:Variables.svGetLatLong.dataSet.results[$i].geometry.location.lat"></wm-form-field>
+                        <wm-form-field name="animalType" displayname="Animal Type" show="true" primary-key="false" generator="assigned" key="animalType" type="list" is-related="true" readonly="false" required="true" widget="select" matchmode="startignorecase"
+                            placeholder="Select value" filterexpressions="{&quot;condition&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;target&quot;:&quot;&quot;,&quot;type&quot;:&quot;string&quot;,&quot;matchMode&quot;:&quot;anywhereignorecase&quot;,&quot;value&quot;:&quot;&quot;,&quot;required&quot;:false}]}"
+                            displayexpression="name"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn24">
+                        <wm-form-field name="isVaccinated" displayname="Is Vaccinated" show="true" primary-key="false" generator="assigned" key="isVaccinated" type="boolean" readonly="false" required="false" widget="checkbox" placeholder="" checkedvalue="true"
+                            uncheckedvalue="false" defaultvalue="false"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow10">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn25">
+                        <wm-form-field name="imagePath" displayname="Image Path" show="false" primary-key="false" generator="assigned" key="imagePath" type="string" readonly="false" required="false" widget="text" maxchars="2048" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn26">
+                        <wm-form-field name="isAdopted" displayname="Is Adopted" show="false" primary-key="false" generator="assigned" key="isAdopted" type="boolean" readonly="false" required="false" widget="checkbox" placeholder="" defaultvalue="false" checkedvalue="true"
+                            uncheckedvalue="false"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn27">
+                        <wm-form-field name="uploadDate" displayname="Upload Date" show="false" primary-key="false" generator="assigned" key="uploadDate" type="datetime" readonly="false" required="false" widget="datetime" datepattern="MMM d, y h:mm:ss a"
+                            placeholder="Select date time" outputformat="yyyy-MM-ddTHH:mm:ss" defaultvalue="CURRENT_DATE"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow11">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn29">
+                        <wm-form-field name="organization" displayname="Organization" show="false" primary-key="false" generator="assigned" key="organization" type="list" is-related="true" readonly="false" required="false" widget="select" matchmode="startignorecase"
+                            placeholder="Select value" filterexpressions="{&quot;condition&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;target&quot;:&quot;&quot;,&quot;type&quot;:&quot;string&quot;,&quot;matchMode&quot;:&quot;anywhereignorecase&quot;,&quot;value&quot;:&quot;&quot;,&quot;required&quot;:false}]}"
+                            displayexpression="name" defaultvalue="bind:Variables.getNgoDetails.firstRecord"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+            <wm-form-action key="reset" display-name="Reset" show="true" class="form-reset btn-default" iconclass="wi wi-refresh" title="Reset" action="reset()" disabled="false" widget-type="button" type="button" update-mode="true"></wm-form-action>
+            <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" widget-type="button" type="submit" update-mode="true"></wm-form-action>
+        </wm-liveform>
+    </wm-dialog>
+</wm-page>

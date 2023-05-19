@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="deleteAnimalById">
+        <![CDATA[
+        delete from animal where id=:id
+        ]]>
+    <query-param name="id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getAnimalById">
+        <![CDATA[
+        select * from animal where id=:id
+        ]]>
+    <query-param name="id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getAnimalById__count">
+        <![CDATA[
+        select count(*) from (select * from animal where id=:id) wmTempTable
+        ]]>
+    <query-param name="id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="deleteOrgFromLogin">
+        <![CDATA[
+        delete from login where email=:email
+        ]]>
+    <query-param name="email" type="java.lang.String"/>
+    </sql-query>
+</hibernate-mapping>

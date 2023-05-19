@@ -1,0 +1,99 @@
+<wm-page pagetitle="User Volunteer" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-container name="container1">
+                <wm-layoutgrid name="layoutgrid3_1">
+                    <wm-gridrow name="gridrow9">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn15">
+                            <wm-list listclass="list-group" template="true" template-name="I Card" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" statehandler="none" name="OrganizationList1" dataset="bind:Variables.Wepet2OrganizationData.dataSet" navigation="Scroll">
+                                <wm-listtemplate layout="media" name="listtemplate1">
+                                    <wm-card name="Picture" picturesource="bind:Variables.Wepet2OrganizationData.dataSet[$i].profilePic">
+                                        <wm-card-content name="card_content1">
+                                            <wm-label caption="bind:Variables.Wepet2OrganizationData.dataSet[$i].name" name="Name" margin="0px unset unset unset" class="h4" whitespace="nowrap"></wm-label>
+                                            <wm-layoutgrid columns="2" name="layoutgrid1">
+                                                <wm-gridrow name="gridrow1">
+                                                    <wm-gridcolumn colwidth="6" columnwidth="2" horizontalalign="left" name="gridcolumn1">
+                                                        <wm-icon iconclass="wi wi-contact-mail fa-2x" class="text-muted" name="icon1"></wm-icon>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn colwidth="6" padding="unset unset unset 1.25em" name="gridcolumn2" columnwidth="10">
+                                                        <wm-label name="email" caption="bind:Variables.Wepet2OrganizationData.dataSet[$i].email" fontunit="em" class="text-muted p" whitespace="nowrap"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow3">
+                                                    <wm-gridcolumn colwidth="6" columnwidth="2" horizontalalign="left" name="gridcolumn5">
+                                                        <wm-icon iconclass="wi wi-location-on fa-2x" class="text-muted" name="icon3"></wm-icon>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn colwidth="6" padding="unset unset unset 1.25em" name="gridcolumn6">
+                                                        <wm-label name="location" caption="bind:Variables.Wepet2OrganizationData.dataSet[$i].street+&quot;,&quot;+Variables.Wepet2OrganizationData.dataSet[$i].city+&quot;,&quot;+Variables.Wepet2OrganizationData.dataSet[$i].state+&quot;,&quot;+Variables.Wepet2OrganizationData.dataSet[$i].country+&quot;,&quot;+Variables.Wepet2OrganizationData.dataSet[$i].pincode"
+                                                            fontunit="em" class="text-muted"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-card-content>
+                                        <wm-card-footer horizontalalign="center" name="card_footer1">
+                                            <wm-button class="btn-success req-btn" caption="Request to volunteer" type="button" margin="unset 0.5em" name="button1" color="#ffffff" on-click="Widgets.dialog1.open()"></wm-button>
+                                        </wm-card-footer>
+                                    </wm-card>
+                                </wm-listtemplate>
+                            </wm-list>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-confirmdialog on-ok="Widgets.confirmdialog1.close()" on-cancel="Widgets.confirmdialog1.close()" name="confirmdialog1" message="Your profile will be shared to the organization for review. Are you sure you want to send request ?"></wm-confirmdialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Volunteering application" iconclass="wi wi-file-text" name="dialog1">
+        <wm-dialogactions name="dialogactions1"></wm-dialogactions>
+        <wm-liveform errormessage="" title="" iconclass="" defaultmode="Edit" dataset="bind:Variables.Wepet2VolunteerData.dataSet" captionalign="left" captionposition="top" name="VolunteerLiveForm1">
+            <wm-layoutgrid columns="2" name="layoutgrid3">
+                <wm-gridrow name="gridrow5">
+                    <wm-gridcolumn columnwidth="9" name="gridcolumn9">
+                        <wm-form-field name="description" displayname="Tell them why you want to volunteer." show="true" primary-key="false" generator="assigned" key="description" type="string" widget="textarea"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn10">
+                        <wm-form-field name="applicationStatus" displayname="Application Status" show="true" primary-key="false" generator="assigned" key="applicationStatus" type="string" readonly="false" required="false" widget="text" maxchars="50" inputtype="text"
+                            placeholder="Enter value" defaultvalue="pending"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow6">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn11">
+                        <wm-form-field name="applicationDate" displayname="Application Date" show="true" primary-key="false" generator="assigned" key="applicationDate" type="date" readonly="false" required="false" widget="date" datepattern="MMM d, y" placeholder="Select date"
+                            defaultvalue="CURRENT_DATE"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn12">
+                        <wm-form-field name="joiningDate" displayname="Joining Date" show="true" primary-key="false" generator="assigned" key="joiningDate" type="date" readonly="false" required="false" widget="date" datepattern="MMM d, y" placeholder="Select date"
+                            outputformat="yyyy-MM-dd"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow7">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn13">
+                        <wm-form-field name="terminationDate" displayname="Termination Date" show="true" primary-key="false" generator="assigned" key="terminationDate" type="date" readonly="false" required="false" widget="date" datepattern="MMM d, y" placeholder="Select date"
+                            outputformat="yyyy-MM-dd"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn14">
+                        <wm-form-field name="user" displayname="User" show="true" primary-key="false" generator="assigned" key="user" type="list" is-related="true" readonly="false" required="true" widget="select" matchmode="startignorecase" placeholder="Select value"
+                            defaultvalue="bind:Variables.dvGetUserByEmail.firstRecord"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn name="gridcolumn1" columnwidth="6">
+                        <wm-form-field name="organization" displayname="Organization" show="true" primary-key="false" generator="assigned" key="organization" type="list" is-related="true" readonly="false" required="true" widget="select" matchmode="startignorecase"
+                            placeholder="Select value" defaultvalue="bind:Widgets.OrganizationList1.selecteditem"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow6_1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn11_1">
+                        <wm-label padding="unset 0.5em" name="label4" caption="Your profile will be shared with the applying organization."></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+            <wm-form-action key="reset" display-name="Reset" show="true" class="form-reset btn-default" iconclass="wi wi-refresh" title="Reset" action="reset()" disabled="false" widget-type="button" type="button" update-mode="true"></wm-form-action>
+            <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" widget-type="button" type="submit" update-mode="true"></wm-form-action>
+        </wm-liveform>
+        <wm-button class="btn-primary" caption="Close" on-click="closeDialog()" name="button2"></wm-button>
+    </wm-dialog>
+</wm-page>

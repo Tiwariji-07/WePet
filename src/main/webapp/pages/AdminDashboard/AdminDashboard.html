@@ -1,0 +1,268 @@
+<wm-page pagetitle="Admin Dashboard" name="page1">
+    <wm-header content="NgoHeader" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-container name="container1">
+                <wm-linearlayout direction="column" spacing="4" padding="4px" name="linearlayout1">
+                    <wm-linearlayoutitem name="linearlayoutitem1">
+                        <wm-label padding="unset 0.5em" name="label2" caption="DASHBOARD" class="h2" fontweight="bold"></wm-label>
+                    </wm-linearlayoutitem>
+                    <wm-linearlayoutitem name="linearlayoutitem20" flexgrow="0" horizontalalign="right">
+                        <wm-button class="btn-default btn-info" caption="Edit" type="button" margin="unset 0.5em" name="button6" iconclass="wi wi-mode-edit" on-click="Widgets.dialog2.open()"></wm-button>
+                    </wm-linearlayoutitem>
+                    <wm-linearlayoutitem name="linearlayoutitem14_1">
+                        <wm-container name="container9" class="jumbotron">
+                            <wm-layoutgrid name="layoutgrid2_1">
+                                <wm-gridrow name="gridrow5">
+                                    <wm-gridcolumn columnwidth="3" name="gridcolumn9" horizontalalign="center">
+                                        <wm-picture resizemode="contain" picturesource="bind:Variables.dvGetUserByEmail.firstRecord.imageUrl" shape="circle" width="60px" height="60px" pictureplaceholder="resources/images/imagelists/wepet-logo.png" name="picture5"></wm-picture>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="5" name="gridcolumn10">
+                                        <wm-linearlayout direction="row" name="linearlayout7" verticalalign="center">
+                                            <wm-linearlayoutitem name="linearlayoutitem16">
+                                                <wm-label padding="unset 0.5em" name="label15" caption="Name :" fontstyle="italic"></wm-label>
+                                            </wm-linearlayoutitem>
+                                            <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem17">
+                                                <wm-label padding="unset 0.5em" name="label16" caption="bind:Variables.dvGetUserByEmail.dataSet[$i].firstName+&quot; &quot;+Variables.dvGetUserByEmail.dataSet[$i].lastName" class="h4" fontweight="bold"></wm-label>
+                                            </wm-linearlayoutitem>
+                                        </wm-linearlayout>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn13">
+                                        <wm-linearlayout direction="row" verticalalign="center" name="linearlayout9">
+                                            <wm-linearlayoutitem name="linearlayoutitem21">
+                                                <wm-label padding="unset 0.5em" caption="Phone No :" fontstyle="italic" name="label19"></wm-label>
+                                            </wm-linearlayoutitem>
+                                            <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem22">
+                                                <wm-label padding="unset 0.5em" caption="bind:Variables.dvGetUserByEmail.dataSet[$i].phoneNo" class="h4" fontweight="bold" name="label20"></wm-label>
+                                            </wm-linearlayoutitem>
+                                        </wm-linearlayout>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow6">
+                                    <wm-gridcolumn columnwidth="3" name="gridcolumn16"></wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="5" name="gridcolumn11">
+                                        <wm-linearlayout direction="row" verticalalign="center" name="linearlayout10">
+                                            <wm-linearlayoutitem name="linearlayoutitem23">
+                                                <wm-label padding="unset 0.5em" caption="Address :" fontstyle="italic" name="label21"></wm-label>
+                                            </wm-linearlayoutitem>
+                                            <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem24">
+                                                <wm-label padding="unset 0.5em" caption="bind:Variables.dvGetUserByEmail.dataSet[$i].street+&quot;, &quot;+Variables.dvGetUserByEmail.dataSet[$i].city+&quot;, &quot;+Variables.dvGetUserByEmail.dataSet[$i].state+&quot;, &quot;+Variables.dvGetUserByEmail.dataSet[$i].country+&quot;, &quot;+Variables.dvGetUserByEmail.dataSet[$i].pincode"
+                                                    class="h4" fontweight="bold" name="label22" textalign="left"></wm-label>
+                                            </wm-linearlayoutitem>
+                                        </wm-linearlayout>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn12"></wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-container>
+                    </wm-linearlayoutitem>
+                    <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem2">
+                        <wm-tabs type="static" statehandler="URL" name="tabs1">
+                            <wm-tabpane name="tabpane1" title="Pending Organizations">
+                                <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Action List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" statehandler="URL" name="OrganizationList1" dataset="bind:Variables.Wepet2OrganizationData.dataSet"
+                                    navigation="Pager">
+                                    <wm-listtemplate layout="inline" name="listtemplate1">
+                                        <wm-container class="media-left" name="container2">
+                                            <wm-picture width="32pt" height="32pt" name="Picture" shape="circle" picturesource="bind:Variables.Wepet2OrganizationData.dataSet[$i].profilePic" class="media-object"></wm-picture>
+                                        </wm-container>
+                                        <wm-container class="media-body" padding="unset unset unset 1.25em" name="container3">
+                                            <wm-label name="Name" class="p media-heading" caption="bind:Variables.Wepet2OrganizationData.dataSet[$i].name" fontsize="1.143" fontunit="em"></wm-label>
+                                            <wm-label name="JobTitle" caption="bind:Variables.Wepet2OrganizationData.dataSet[$i].email" class="p text-muted"></wm-label>
+                                        </wm-container>
+                                        <wm-container class="media-right media-top" name="container4">
+                                            <wm-button class="btn-info" caption="View Profile" type="button" margin="unset 0.5em" name="button2" color="#ffffff" on-click="Widgets.dialog1.open()"></wm-button>
+                                        </wm-container>
+                                    </wm-listtemplate>
+                                </wm-list>
+                            </wm-tabpane>
+                            <wm-tabpane name="tabpane2" title="Approved Organizations">
+                                <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" statehandler="URL" name="OrganizationList2" dataset="bind:Variables.Wepet2OrganizationData1.dataSet"
+                                    navigation="Pager">
+                                    <wm-listtemplate layout="media" name="listtemplate2">
+                                        <wm-container class="media-left media-top" name="container5">
+                                            <wm-picture name="Picture" class="media-object" width="32pt" height="32pt" picturesource="bind:Variables.Wepet2OrganizationData1.dataSet[$i].profilePic"></wm-picture>
+                                        </wm-container>
+                                        <wm-container class="media-body" padding="unset 1.5em unset 1.25em" name="container6">
+                                            <wm-label class="pull-left" caption="bind:Variables.Wepet2OrganizationData1.dataSet[$i].name" name="Name" margin="0em unset 0.5em unset" fontsize="1.143" fontunit="em"></wm-label>
+                                            <wm-label caption="bind:Variables.Wepet2OrganizationData1.dataSet[$i].email" name="Description" class="p text-muted"></wm-label>
+                                        </wm-container>
+                                        <wm-container class="media-right" horizontalalign="right" padding="unset 1em unset unset" name="container7"></wm-container>
+                                    </wm-listtemplate>
+                                </wm-list>
+                            </wm-tabpane>
+                        </wm-tabs>
+                    </wm-linearlayoutitem>
+                </wm-linearlayout>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Organization Profile" iconclass="wi wi-file-text" name="dialog1">
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="btn-primary" caption="Close" on-click="closeDialog()" name="button3"></wm-button>
+        </wm-dialogactions>
+        <wm-container name="container8">
+            <wm-layoutgrid name="layoutgrid2">
+                <wm-gridrow name="gridrow3">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn5">
+                        <wm-picture resizemode="cover" name="picture3" shape="circle" picturesource="bind:Widgets.OrganizationList1.selecteditem.profilePic"></wm-picture>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn6">
+                        <wm-linearlayout direction="column" spacing="4" padding="4px" name="linearlayout2">
+                            <wm-linearlayoutitem name="linearlayoutitem4">
+                                <wm-label padding="unset 0.5em" name="label6" class="h6" fontweight="bold" caption="Address"></wm-label>
+                            </wm-linearlayoutitem>
+                            <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem5">
+                                <wm-label padding="unset 0.5em" name="label7" caption="bind:Widgets.OrganizationList1.selecteditem.street+&quot;,&quot;+Widgets.OrganizationList1.selecteditem.city+&quot;,&quot;+Widgets.OrganizationList1.selecteditem.state+&quot;,&quot;+Widgets.OrganizationList1.selecteditem.country+&quot;,&quot;+Widgets.OrganizationList1.selecteditem.pincode"></wm-label>
+                            </wm-linearlayoutitem>
+                        </wm-linearlayout>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow4">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn7">
+                        <wm-linearlayout direction="column" spacing="4" padding="4px" name="linearlayout3">
+                            <wm-linearlayoutitem name="linearlayoutitem7">
+                                <wm-label padding="unset 0.5em" name="label8" class="h6" fontweight="bold" caption="Name"></wm-label>
+                            </wm-linearlayoutitem>
+                            <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem8">
+                                <wm-label padding="unset 0.5em" name="label9" caption="bind:Widgets.OrganizationList1.selecteditem.name"></wm-label>
+                            </wm-linearlayoutitem>
+                        </wm-linearlayout>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn8">
+                        <wm-linearlayout direction="column" spacing="4" padding="4px" name="linearlayout4">
+                            <wm-linearlayoutitem name="linearlayoutitem9">
+                                <wm-label padding="unset 0.5em" name="label10" class="h6" fontweight="bold" caption="Contact"></wm-label>
+                            </wm-linearlayoutitem>
+                            <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem10">
+                                <wm-linearlayout direction="column" name="linearlayout6">
+                                    <wm-linearlayoutitem name="linearlayoutitem13">
+                                        <wm-label padding="unset 0.5em" name="email" caption="bind:Widgets.OrganizationList1.selecteditem.email"></wm-label>
+                                    </wm-linearlayoutitem>
+                                    <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem14">
+                                        <wm-label padding="unset 0.5em" name="phone" caption="bind:Widgets.OrganizationList1.selecteditem.phoneNo"></wm-label>
+                                    </wm-linearlayoutitem>
+                                </wm-linearlayout>
+                            </wm-linearlayoutitem>
+                        </wm-linearlayout>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow3_1">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn5_1">
+                        <wm-linearlayout direction="column" spacing="4" padding="4px" name="linearlayout5">
+                            <wm-linearlayoutitem name="linearlayoutitem11">
+                                <wm-label padding="unset 0.5em" name="label12" class="h6" fontweight="bold" caption="License"></wm-label>
+                            </wm-linearlayoutitem>
+                            <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem12">
+                                <wm-button class="btn-default btn-link" caption="Download License" type="button" margin="unset 0.5em" name="button3_1" iconclass="wi wi-file-download" on-click="button3_1Click($event, widget)"></wm-button>
+                            </wm-linearlayoutitem>
+                        </wm-linearlayout>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn6_1"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow4_1">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn7_1">
+                        <wm-button class="btn-default btn-success btn-block" caption="Approve" type="button" margin="unset 1em unset unset" name="button4" on-click="Variables.dvAcceptOrganization.updateRecord()"></wm-button>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn8_1">
+                        <wm-button class="btn-default btn-block  btn-danger" caption="Reject" type="button" margin="unset 0.5em unset 1em" name="button5" on-click="Variables.dvDeleteOrganizationPending.deleteRecord()"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="" iconclass="" name="dialog2" width="700px">
+        <wm-dialogactions name="dialogactions2">
+            <wm-button class="btn-primary" caption="Close" on-click="closeDialog()" name="button7"></wm-button>
+        </wm-dialogactions>
+        <wm-liveform errormessage="" title="User Info" iconclass="wi wi-edit" defaultmode="Edit" dataset="bind:Variables.dvUpdateAdmin.dataSet" captionalign="left" captionposition="top" name="UserLiveForm1">
+            <wm-layoutgrid columns="3" name="layoutgrid4">
+                <wm-gridrow name="gridrow10">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn21">
+                        <wm-form-field name="firstName" displayname="First Name" required="true" show="true" generator="assigned" primary-key="false" key="firstName" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.dvGetUserByEmail.firstRecord.firstName"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn22">
+                        <wm-form-field name="lastName" displayname="Last Name" required="false" show="true" generator="assigned" primary-key="false" key="lastName" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.dvGetUserByEmail.dataSet[$i].lastName"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn23">
+                        <wm-form-field name="email" displayname="Email" required="true" show="true" generator="assigned" primary-key="false" key="email" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.dvGetUserByEmail.dataSet[$i].email"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow11">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn24">
+                        <wm-form-field name="phoneNo" displayname="Phone No" required="true" show="true" generator="assigned" primary-key="false" key="phoneNo" type="long" is-related="false" step="0" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="number" defaultvalue="bind:Variables.dvGetUserByEmail.dataSet[$i].phoneNo"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn25">
+                        <wm-form-field name="password" displayname="Password" required="true" show="true" generator="assigned" primary-key="false" key="password" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.dvGetUserByEmail.dataSet[$i].password"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn26">
+                        <wm-form-field name="gender" displayname="Gender" required="false" show="true" generator="assigned" primary-key="false" key="gender" type="string" is-related="false" maxchars="20" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.dvGetUserByEmail.dataSet[$i].gender"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow12">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn27">
+                        <wm-form-field name="occupation" displayname="Occupation" required="false" show="true" generator="assigned" primary-key="false" key="occupation" type="string" is-related="false" maxchars="50" pc-display="true" mobile-display="true"
+                            tablet-display="true" widget="text" defaultvalue="bind:Variables.dvGetUserByEmail.dataSet[$i].occupation"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn28">
+                        <wm-form-field name="role" displayname="Role" required="true" show="true" generator="assigned" primary-key="false" key="role" type="string" is-related="false" maxchars="20" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.dvGetUserByEmail.dataSet[$i].role"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn29">
+                        <wm-form-field name="street" displayname="Street" required="false" show="true" generator="assigned" primary-key="false" key="street" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.dvGetUserByEmail.dataSet[$i].street"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow13">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn30">
+                        <wm-form-field name="city" displayname="City" required="false" show="true" generator="assigned" primary-key="false" key="city" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.dvGetUserByEmail.dataSet[$i].city"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn31">
+                        <wm-form-field name="district" displayname="District" required="false" show="true" generator="assigned" primary-key="false" key="district" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.dvGetUserByEmail.dataSet[$i].district"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn32">
+                        <wm-form-field name="state" displayname="State" required="false" show="true" generator="assigned" primary-key="false" key="state" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.dvGetUserByEmail.dataSet[$i].state"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow14">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn33">
+                        <wm-form-field name="country" displayname="Country" required="false" show="true" generator="assigned" primary-key="false" key="country" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.dvGetUserByEmail.dataSet[$i].country"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn34">
+                        <wm-form-field name="pincode" displayname="Pincode" required="false" show="true" generator="assigned" primary-key="false" key="pincode" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="number" defaultvalue="bind:Variables.dvGetUserByEmail.dataSet[$i].pincode"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn35">
+                        <wm-form-field name="longitude" displayname="Longitude" required="false" show="true" generator="assigned" primary-key="false" key="longitude" type="big_decimal" is-related="false" step="1e-9" pc-display="true" mobile-display="true"
+                            tablet-display="true" widget="number" defaultvalue="bind:Variables.dvGetUserByEmail.dataSet[$i].longitude"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow15">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn36">
+                        <wm-form-field name="latitude" displayname="Latitude" required="false" show="true" generator="assigned" primary-key="false" key="latitude" type="big_decimal" is-related="false" step="1e-9" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="number" defaultvalue="bind:Variables.dvGetUserByEmail.dataSet[$i].latitude"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn37">
+                        <wm-form-field name="imageUrl" displayname="Image Url" required="false" show="true" generator="assigned" primary-key="false" key="imageUrl" type="string" is-related="false" maxchars="2048" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.dvGetUserByEmail.dataSet[$i].imageUrl"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn38"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-form-field name="id" displayname="Id" required="true" show="false" generator="identity" primary-key="true" key="id" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" tablet-display="true" widget="number"></wm-form-field>
+            <wm-form-action key="reset" class="form-reset btn-default" iconclass="wi wi-refresh" action="reset()" display-name="Reset" show="true" type="button" update-mode="true"></wm-form-action>
+            <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+        </wm-liveform>
+    </wm-dialog>
+</wm-page>

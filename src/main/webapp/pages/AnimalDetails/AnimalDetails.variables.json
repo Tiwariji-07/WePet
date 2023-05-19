@@ -1,0 +1,28 @@
+{
+  "SVgetEachAnimal" : {
+    "_id" : "wm-SVgetEachAnimal-wm.ServiceVariable-1683784798698",
+    "name" : "SVgetEachAnimal",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "id",
+      "value" : "7",
+      "type" : "integer"
+    } ],
+    "type" : "com.wepet.wepet2.Animal",
+    "service" : "wepet2",
+    "operation" : "getAnimal",
+    "operationId" : "AnimalController_getAnimal",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Animal"
+  }
+}

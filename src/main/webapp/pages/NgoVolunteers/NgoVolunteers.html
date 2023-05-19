@@ -1,0 +1,96 @@
+<wm-page pagetitle="Volunteers" name="page1">
+    <wm-header content="NgoHeader" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="NgoPanel" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-container name="container1">
+                <wm-tabs type="static" statehandler="URL" name="tabs1" defaultpaneindex="1">
+                    <wm-tabpane name="tabpane1" title="All volunteers">
+                        <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" statehandler="URL" name="VolunteerList1" dataset="bind:Variables.Wepet2VolunteerData1.dataSet"
+                            navigation="Pager">
+                            <wm-listtemplate layout="media" name="listtemplate1">
+                                <wm-container class="media-left media-top" name="container2">
+                                    <wm-picture name="Picture" class="media-object" width="32pt" height="32pt" picturesource="bind:Variables.Wepet2VolunteerData1.dataSet[$i].user.imageUrl"></wm-picture>
+                                </wm-container>
+                                <wm-container class="media-body" padding="unset 1.5em unset 1.25em" name="container3">
+                                    <wm-label class="pull-left" caption="bind:Variables.Wepet2VolunteerData1.dataSet[$i].user.firstName" name="Name" margin="0em unset 0.5em unset" fontsize="1.143" fontunit="em"></wm-label>
+                                    <wm-label name="Time" class="pull-right text-muted" caption="bind:Variables.Wepet2VolunteerData1.dataSet[$i].applicationDate"></wm-label>
+                                    <wm-label caption="bind:Variables.Wepet2VolunteerData1.dataSet[$i].description" name="Description" class="p text-muted"></wm-label>
+                                </wm-container>
+                                <wm-container class="media-right" horizontalalign="right" padding="unset 1em unset unset" name="container4">
+                                    <wm-button class="btn-danger" caption="Remove" type="button" margin="unset 0.5em" name="button14" color="#ffffff" on-click="Variables.dvDeleteVolunteerAll.deleteRecord()"></wm-button>
+                                </wm-container>
+                            </wm-listtemplate>
+                        </wm-list>
+                    </wm-tabpane>
+                    <wm-tabpane name="tabpane2" title="Pending volunteer requests">
+                        <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Action List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" statehandler="URL" name="VolunteerList3" dataset="bind:Variables.Wepet2VolunteerData2.dataSet"
+                            navigation="Pager">
+                            <wm-listtemplate layout="inline" name="listtemplate3">
+                                <wm-container class="media-left" name="container9">
+                                    <wm-picture width="32pt" height="32pt" name="Picture" shape="circle" picturesource="bind:Variables.Wepet2VolunteerData2.dataSet[$i].user.imageUrl" class="media-object"></wm-picture>
+                                </wm-container>
+                                <wm-container class="media-body" padding="unset unset unset 1.25em" name="container10">
+                                    <wm-label name="Name" class="p media-heading" caption="bind:Variables.Wepet2VolunteerData2.dataSet[$i].user.firstName" fontsize="1.143" fontunit="em"></wm-label>
+                                    <wm-label name="JobTitle" caption="bind:Variables.Wepet2VolunteerData2.dataSet[$i].applicationDate" class="p text-muted"></wm-label>
+                                </wm-container>
+                                <wm-container class="media-right media-top" name="container11">
+                                    <wm-button class="btn-info" iconclass="" name="button10" caption="View Profile" color="#ffffff" on-click="Widgets.dialog1.open()"></wm-button>
+                                </wm-container>
+                            </wm-listtemplate>
+                        </wm-list>
+                    </wm-tabpane>
+                </wm-tabs>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Volunteer Profile" iconclass="wi wi-file-text" name="dialog1">
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="btn-primary" caption="Close" on-click="closeDialog()" name="button11"></wm-button>
+        </wm-dialogactions>
+        <wm-container name="container12">
+            <wm-layoutgrid name="layoutgrid5">
+                <wm-gridrow name="gridrow11">
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn22">
+                        <wm-picture resizemode="contain" name="picture4" picturesource="bind:Widgets.VolunteerList3.selecteditem.user.imageUrl" shape="circle" height="40px"></wm-picture>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="5" name="gridcolumn23" horizontalalign="left">
+                        <wm-label padding="unset 0.5em" name="label13" caption="Name"></wm-label>
+                        <wm-label padding="unset 0.5em" name="label18" caption="bind:Widgets.VolunteerList3.selecteditem.user.firstName+&quot; &quot;+Widgets.VolunteerList3.selecteditem.user.lastName"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="5" name="gridcolumn26">
+                        <wm-label padding="unset 0.5em" name="label19" caption="Gender"></wm-label>
+                        <wm-label padding="unset 0.5em" name="label14" caption="bind:Widgets.VolunteerList3.selecteditem.user.gender"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow12">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn24">
+                        <wm-label padding="unset 0.5em" name="label15" caption="Address"></wm-label>
+                        <wm-label padding="unset 0.5em" name="label20" caption="bind:Widgets.VolunteerList3.selecteditem.user.street+&quot;,&quot;+Widgets.VolunteerList3.selecteditem.user.city+&quot;,&quot;+Widgets.VolunteerList3.selecteditem.user.state+&quot;,&quot;+Widgets.VolunteerList3.selecteditem.user.country"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow13">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn27">
+                        <wm-label padding="unset 0.5em" name="label16" caption="Reason to Volunteer"></wm-label>
+                        <wm-label padding="unset 0.5em" name="label21" caption="bind:Widgets.VolunteerList3.selecteditem.description"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow14">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn29">
+                        <wm-button class="btn-default btn-block btn-success" caption="Accept" type="button" margin="unset 0.5em" name="button12" on-click="Variables.dvUpdateVolunteer.updateRecord()"></wm-button>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn30">
+                        <wm-button class="btn-default btn-block btn-danger" caption="Reject" type="button" margin="unset 0.5em" name="button13" on-click="Variables.dvDeleteVolunteerPending.deleteRecord()"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+        <wm-composite name="composite2" show="false">
+            <wm-label class="col-md-3 control-label" name="label22"></wm-label>
+            <wm-container class="col-md-9" name="container14">
+                <wm-date name="date1" datavalue="CURRENT_DATE"></wm-date>
+            </wm-container>
+        </wm-composite>
+    </wm-dialog>
+</wm-page>

@@ -1,0 +1,88 @@
+<wm-page pagetitle="User Rehome" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-liveform errormessage="" title="Animal Info" iconclass="wi wi-edit" defaultmode="Edit" dataset="bind:Variables.VrAddAnimal.dataSet" captionalign="left" captionposition="top" name="AnimalLiveForm1" on-beforeservicecall="AnimalLiveForm1Beforeservicecall($event, $operation, $data, options)">
+                <wm-layoutgrid columns="3" name="layoutgrid1">
+                    <wm-gridrow name="gridrow1">
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn1">
+                            <wm-form-field name="name" displayname="Name" show="true" primary-key="false" generator="assigned" key="name" type="string" readonly="false" required="true" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn2">
+                            <wm-form-field name="breed" displayname="Breed" show="true" primary-key="false" generator="assigned" key="breed" type="string" readonly="false" required="false" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn3">
+                            <wm-form-field name="size" displayname="Size" show="true" primary-key="false" generator="assigned" key="size" type="string" readonly="false" required="true" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow2">
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn4">
+                            <wm-form-field name="age" displayname="Age" show="true" primary-key="false" generator="assigned" key="age" type="integer" readonly="false" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn5">
+                            <wm-form-field name="description" displayname="Description" show="true" primary-key="false" generator="assigned" key="description" type="string" readonly="false" required="false" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn6">
+                            <wm-form-field name="gender" displayname="Gender" show="true" primary-key="false" generator="assigned" key="gender" type="string" readonly="false" required="true" widget="text" maxchars="20" inputtype="text" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow3">
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn7">
+                            <wm-form-field name="street" displayname="Street" show="true" primary-key="false" generator="assigned" key="street" type="string" readonly="false" required="true" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn8">
+                            <wm-form-field name="city" displayname="City" show="true" primary-key="false" generator="assigned" key="city" type="string" readonly="false" required="true" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn9">
+                            <wm-form-field name="district" displayname="District" show="true" primary-key="false" generator="assigned" key="district" type="string" readonly="false" required="false" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow4">
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn10">
+                            <wm-form-field name="state" displayname="State" show="true" primary-key="false" generator="assigned" key="state" type="string" readonly="false" required="true" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn11">
+                            <wm-form-field name="country" displayname="Country" show="true" primary-key="false" generator="assigned" key="country" type="string" readonly="false" required="false" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn12">
+                            <wm-form-field name="pincode" displayname="Pincode" show="true" primary-key="false" generator="assigned" key="pincode" type="integer" readonly="false" required="false" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow5">
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn13">
+                            <wm-form-field name="longitude" displayname="Longitude" show="false" primary-key="false" generator="assigned" key="longitude" type="big_decimal" readonly="false" required="false" step="1e-9" widget="number" defaultvalue="bind:Variables.svGetLatLong.dataSet.results[$i].geometry.location.lng"
+                                inputtype="number" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn14">
+                            <wm-form-field name="latitude" displayname="Latitude" show="false" primary-key="false" generator="assigned" key="latitude" type="big_decimal" readonly="false" required="false" step="1e-9" widget="number" defaultvalue="bind:Variables.svGetLatLong.dataSet.results[$i].geometry.location.lat"
+                                inputtype="number" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn15">
+                            <wm-form-field name="isVaccinated" displayname="Is Vaccinated" show="true" primary-key="false" generator="assigned" key="isVaccinated" type="boolean" readonly="false" required="false" widget="checkbox" placeholder="" checkedvalue="true"
+                                uncheckedvalue="false"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow6">
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn16">
+                            <wm-form-field name="imagePath" displayname="Image Path" show="false" primary-key="false" generator="assigned" key="imagePath" type="string" readonly="false" required="false" widget="text" maxchars="2048" inputtype="text" placeholder="Enter value"></wm-form-field>
+                            <wm-label padding="unset 0.5em" name="label1" caption="Upload image"></wm-label>
+                            <wm-fileupload cleariconclass="wi wi-clear" cleariconhint="Clear" name="fileupload1" on-select="Variables.FileServiceUploadFile2.invoke()" maxfilesize="20"></wm-fileupload>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn17">
+                            <wm-form-field name="animalType" displayname="Animal Type" show="true" primary-key="false" generator="assigned" key="animalType" type="list" is-related="true" readonly="false" required="true" widget="select" matchmode="startignorecase"
+                                dataset="bind:Variables.svGetAnimalType.dataSet" datafield="All Fields" displayfield="name" placeholder="Select value"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn name="gridcolumn1" columnwidth="4">
+                            <wm-form-field name="isAdopted" displayname="Is Adopted" show="false" primary-key="false" generator="assigned" key="isAdopted" type="boolean" readonly="false" required="false" widget="checkbox" defaultvalue="true"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+                <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+                <wm-form-action key="reset" display-name="Reset" show="true" class="form-reset btn-default" iconclass="wi wi-refresh" title="Reset" action="reset()" disabled="false" widget-type="button" type="button" update-mode="true"></wm-form-action>
+                <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" widget-type="button" type="submit" update-mode="true"></wm-form-action>
+            </wm-liveform>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

@@ -1,0 +1,8 @@
+{
+  "id" : "FileService",
+  "type" : "JavaService",
+  "packageNames" : [ "com.wepet.fileservice" ],
+  "serviceClassNames" : [ "com.wepet.fileservice.FileService" ],
+  "title" : "FileService",
+  "mockEnabled" : false
+}

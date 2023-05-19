@@ -1,0 +1,79 @@
+<wm-page pagetitle="Ngo Rescue" name="page1">
+    <wm-header content="NgoHeader" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="NgoPanel" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-container name="container1">
+                <wm-layoutgrid name="layoutgrid1">
+                    <wm-gridrow name="gridrow1">
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn1">
+                            <wm-linearlayout direction="column" spacing="4" padding="4px" name="linearlayout1">
+                                <wm-linearlayoutitem name="linearlayoutitem1">
+                                    <wm-label padding="unset 0.5em" name="label1" caption="Rescue Requests" class="h3" fontweight="bold"></wm-label>
+                                </wm-linearlayoutitem>
+                                <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem2">
+                                    <wm-linearlayout direction="row" name="linearlayout2">
+                                        <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem4">
+                                            <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" statehandler="URL" name="ComplainList1" dataset="bind:Variables.Wepet2ComplainData.dataSet"
+                                                navigation="Pager">
+                                                <wm-listtemplate layout="media" name="listtemplate1">
+                                                    <wm-container class="media-left media-top" name="container2">
+                                                        <wm-picture name="Picture" class="media-object" width="40pt" height="40pt" picturesource="bind:Variables.Wepet2ComplainData.dataSet[$i].picturePath"></wm-picture>
+                                                    </wm-container>
+                                                    <wm-container class="media-body" padding="unset 1.5em unset 1.25em" name="container3">
+                                                        <wm-label class="pull-left" caption="bind:Variables.Wepet2ComplainData.dataSet[$i].service.name" name="Name" margin="0em unset 0.5em unset" fontsize="1.143" fontunit="em"></wm-label>
+                                                        <wm-label name="Time" class="pull-right text-muted" caption="bind:Variables.Wepet2ComplainData.dataSet[$i].city"></wm-label>
+                                                        <wm-label caption="bind:Variables.Wepet2ComplainData.dataSet[$i].description" name="Description" class="p text-muted text-ellipsis"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container class="media-right" horizontalalign="right" padding="unset 1em unset unset" name="container4">
+                                                        <wm-button class="btn-primary" caption="Accept" type="button" margin="unset 0.5em" name="button2" on-click="Variables.dvUpdateComplain.updateRecord()" color="#ffffff"></wm-button>
+                                                        <wm-button class="btn-secondary" caption="Reject" type="button" margin=".5em 0.5em unset 0.5em" name="button1" on-click="Variables.dvDeleteComplain.deleteRecord()" color="#ffffff"></wm-button>
+                                                    </wm-container>
+                                                </wm-listtemplate>
+                                            </wm-list>
+                                        </wm-linearlayoutitem>
+                                    </wm-linearlayout>
+                                </wm-linearlayoutitem>
+                            </wm-linearlayout>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn2">
+                            <wm-linearlayout direction="column" spacing="4" padding="4px" name="linearlayout3">
+                                <wm-linearlayoutitem name="linearlayoutitem4_1">
+                                    <wm-label padding="unset 0.5em" caption="Adoption Requests" class="h3" fontweight="bold" name="label5"></wm-label>
+                                </wm-linearlayoutitem>
+                                <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem5">
+                                    <wm-linearlayout direction="row" name="linearlayout4">
+                                        <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem6">
+                                            <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" statehandler="URL" name="AdoptionList1" dataset="bind:Variables.Wepet2AdoptionData.dataSet"
+                                                navigation="Pager">
+                                                <wm-listtemplate layout="media" name="listtemplate3">
+                                                    <wm-container class="media-left media-top" name="container8">
+                                                        <wm-picture name="Picture" class="media-object" width="32pt" height="32pt" picturesource="bind:Variables.Wepet2AdoptionData.dataSet[$i].user.imageUrl"></wm-picture>
+                                                    </wm-container>
+                                                    <wm-container class="media-body" padding="unset 1.5em unset 1.25em" name="container9">
+                                                        <wm-label class="pull-left" caption="bind:Variables.Wepet2AdoptionData.dataSet[$i].user.firstName" name="Name" margin="0em unset 0.5em unset" fontsize="1.143" fontunit="em"></wm-label>
+                                                        <wm-label name="Time" class="pull-right text-muted" caption="Time"></wm-label>
+                                                        <wm-label caption="bind:Variables.Wepet2AdoptionData.dataSet[$i].user.email" name="Description" class="p text-muted"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container class="media-right" horizontalalign="right" padding="unset 1em unset unset" name="container11">
+                                                        <wm-button class="btn-primary" caption="Accept" type="button" margin="unset 0.5em" on-click="Variables.dvUpdateAdoption.updateRecord()" color="#ffffff" name="button5"></wm-button>
+                                                        <wm-button class="btn-secondary" caption="Reject" type="button" margin=".5em 0.5em unset 0.5em" on-click="Variables.dvDeleteAdoption.deleteRecord()" color="#ffffff" name="button6"></wm-button>
+                                                    </wm-container>
+                                                </wm-listtemplate>
+                                            </wm-list>
+                                        </wm-linearlayoutitem>
+                                    </wm-linearlayout>
+                                </wm-linearlayoutitem>
+                            </wm-linearlayout>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow2">
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn3"></wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn4"></wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

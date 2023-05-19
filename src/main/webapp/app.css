@@ -1,0 +1,33 @@
+.app-linear-layout.app-linear-layout-direction-column-reverse>.app-linear-layout-item,
+.app-linear-layout.app-linear-layout-direction-column>.app-linear-layout-item {
+    overflow: hidden;
+    width: 100%;
+}
+
+.wm-app .app-header .nav>li .profile::before,
+.wm-app .app-mobile-header .nav>li .profile::before,
+.wm-app .app-header .nav>li:last-child a::before,
+.wm-app .app-mobile-header .nav>li:last-child a::before {
+    content: '';
+    height: 0 !important;
+    /* width: 1px; */
+    /* background-color: #babfc2; */
+    /* position: absolute; */
+    left: 0;
+    /*margin: 0.2em 0; */
+}
+
+.home-cover {
+    background-color: grey !important;
+    background-blend-mode: multiply !important;
+    display: flex;
+    justify-content: center;
+}
+
+.jumbotron {
+    background-color: white !important;
+    border-radius: 20px;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 1em;
+}

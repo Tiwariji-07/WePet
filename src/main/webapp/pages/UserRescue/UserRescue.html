@@ -1,0 +1,96 @@
+<wm-page pagetitle="User Rescue" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-container name="container1">
+                <wm-liveform errormessage="" title="Register a complain" iconclass="wi wi-edit" defaultmode="Edit" dataset="bind:Variables.Wepet2ComplainData.dataSet" captionalign="left" captionposition="top" name="ComplainLiveForm1" on-beforeservicecall="ComplainLiveForm1Beforeservicecall($event, $operation, $data, options)">
+                    <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+                    <wm-wizard stepstyle="justified" class="number" name="wizard1" on-done="Widgets.ComplainLiveForm1.save()">
+                        <wm-wizardstep name="wizardstep1" title="Basic detials">
+                            <wm-layoutgrid name="layoutgrid2">
+                                <wm-gridrow name="gridrow8">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn15">
+                                        <wm-label padding="unset 0.5em" name="label1" caption="Upload an image"></wm-label>
+                                        <wm-fileupload cleariconclass="wi wi-clear" cleariconhint="Clear" name="fileupload1" on-select="Variables.FileServiceUploadFile2.invoke()" maxfilesize="20"></wm-fileupload>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn16">
+                                        <wm-form-field name="description" displayname="Description" show="true" primary-key="false" generator="assigned" key="description" type="string" readonly="false" widget="textarea" maxchars="2048" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow9">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn17">
+                                        <wm-form-field name="service" displayname="Service" show="true" primary-key="false" generator="assigned" key="service" type="list" is-related="true" readonly="false" required="false" widget="select" matchmode="startignorecase"
+                                            placeholder="Select value" filterexpressions="{&quot;condition&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;target&quot;:&quot;&quot;,&quot;type&quot;:&quot;string&quot;,&quot;matchMode&quot;:&quot;anywhereignorecase&quot;,&quot;value&quot;:&quot;&quot;,&quot;required&quot;:false}]}"
+                                            displayexpression="name"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn18"></wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-wizardstep>
+                        <wm-wizardstep name="wizardstep2" title="Location">
+                            <wm-layoutgrid name="layoutgrid3">
+                                <wm-gridrow name="gridrow10">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn19">
+                                        <wm-form-field name="street" displayname="Street" show="true" primary-key="false" generator="assigned" key="street" type="string" readonly="false" required="false" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn20">
+                                        <wm-form-field name="city" displayname="City" show="true" primary-key="false" generator="assigned" key="city" type="string" readonly="false" required="false" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow11">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn21">
+                                        <wm-form-field name="district" displayname="District" show="true" primary-key="false" generator="assigned" key="district" type="string" readonly="false" required="false" widget="text" maxchars="100" inputtype="text"
+                                            placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn22">
+                                        <wm-form-field name="state" displayname="State" show="true" primary-key="false" generator="assigned" key="state" type="string" readonly="false" required="false" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow12">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn23">
+                                        <wm-form-field name="country" displayname="Country" show="true" primary-key="false" generator="assigned" key="country" type="string" readonly="false" required="false" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn24">
+                                        <wm-form-field name="pincode" displayname="Pincode" show="true" primary-key="false" generator="assigned" key="pincode" type="integer" readonly="false" required="false" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow13">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn25">
+                                        <wm-form-field name="latitude" displayname="Latitude" show="true" primary-key="false" generator="assigned" key="latitude" type="big_decimal" readonly="false" required="false" step="1e-9" widget="number" inputtype="number"
+                                            placeholder="Enter value" defaultvalue="bind:Variables.svGetComplainLatLng.dataSet.results[$i].geometry.location.lat"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn26">
+                                        <wm-form-field name="longitude" displayname="Longitude" show="true" primary-key="false" generator="assigned" key="longitude" type="big_decimal" readonly="false" required="false" step="1e-9" widget="number" inputtype="number"
+                                            placeholder="Enter value" defaultvalue="bind:Variables.svGetComplainLatLng.dataSet.results[$i].geometry.location.lng"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-wizardstep>
+                        <wm-wizardstep name="wizardstep3">
+                            <wm-layoutgrid name="layoutgrid4">
+                                <wm-gridrow name="gridrow14">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn27">
+                                        <wm-form-field name="user" displayname="User" show="false" primary-key="false" generator="assigned" key="user" type="list" is-related="true" readonly="false" required="false" widget="select" matchmode="startignorecase"
+                                            placeholder="Select value" defaultvalue="bind:Variables.dvGetUserByEmail.firstRecord"></wm-form-field>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn28">
+                                        <wm-form-field name="organization" displayname="Organization" show="true" primary-key="false" generator="assigned" key="organization" type="list" is-related="true" readonly="false" required="false" widget="select" matchmode="startignorecase"
+                                            placeholder="Select organization" filterexpressions="{&quot;condition&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;target&quot;:&quot;approvalStatus&quot;,&quot;type&quot;:&quot;string&quot;,&quot;matchMode&quot;:&quot;anywhereignorecase&quot;,&quot;value&quot;:&quot;approved&quot;,&quot;required&quot;:false,&quot;$$hashKey&quot;:&quot;object:69104&quot;,&quot;secondvalue&quot;:&quot;&quot;}]}"
+                                            displayexpression="name" dataset="bind:Variables.getNgoDetails.dataSet"></wm-form-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow15">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn29"></wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn30"></wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-wizardstep>
+                    </wm-wizard>
+                    <wm-form-action key="reset" display-name="Reset" show="false" class="form-reset btn-default" iconclass="wi wi-refresh" title="Reset" action="reset()" disabled="false" widget-type="button" type="button" update-mode="true"></wm-form-action>
+                    <wm-form-action key="save" display-name="Save" show="false" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" widget-type="button" type="submit" update-mode="true"></wm-form-action>
+                </wm-liveform>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

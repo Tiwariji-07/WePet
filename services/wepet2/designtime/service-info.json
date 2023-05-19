@@ -1,0 +1,7 @@
+{
+  "id" : "wepet2",
+  "type" : "DataService",
+  "packageNames" : [ "com.wepet.wepet2" ],
+  "title" : "wepet2",
+  "mockEnabled" : false
+}

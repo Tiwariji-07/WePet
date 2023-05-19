@@ -1,0 +1,153 @@
+<wm-page pagetitle="User Adoption" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-button class="btn-default" caption="Add" type="button" margin="unset 0.5em" name="button1" on-click="Widgets.dialog1.open()" show="false"></wm-button>
+            <wm-layoutgrid name="layoutgrid2">
+                <wm-gridrow name="gridrow8">
+                    <wm-gridcolumn columnwidth="9" name="gridcolumn21">
+                        <wm-list listclass="list-group" itemsperrow="xs-1 sm-2 md-3 lg-3" template="true" template-name="Personal Spotlight" class="list-card" statehandler="none" name="AnimalList1" dataset="bind:Widgets.AnimalFilter2.result" navigation="Scroll"
+                            nodatamessage="No pets found" pagesize="15" direction="vertical">
+                            <wm-listtemplate layout="media" name="listtemplate2">
+                                <wm-card name="Picture" picturesource="bind:Widgets.AnimalFilter2.result[$i].imagePath" on-click="Actions.goToPage_PetDetails.invoke()" imageheight="220px">
+                                    <wm-card-content padding="1.25em" name="card_content2">
+                                        <wm-label name="Name" class="h4 text-muted" width="100%" caption="bind:Widgets.AnimalFilter2.result[$i].name" whitespace="nowrap" margin="0px unset unset unset"></wm-label>
+                                        <wm-label name="Title" caption="bind:Widgets.AnimalFilter2.result[$i].breed" class="h4" margin="0px unset unset unset"></wm-label>
+                                        <wm-label name="Description" caption="bind:Widgets.AnimalFilter2.result[$i].city" class="p text-ellipsis text-muted" margin="0px unset unset unset"></wm-label>
+                                    </wm-card-content>
+                                </wm-card>
+                            </wm-listtemplate>
+                        </wm-list>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn22">
+                        <wm-livefilter name="AnimalFilter2" title="Filter Pets" dataset="bind:Variables.Wepet2AnimalData1.dataSet" captionalign="left" captionposition="top" autoupdate="true">
+                            <wm-layoutgrid columns="1" name="layoutgrid4_1">
+                                <wm-gridrow name="gridrow13_1">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn27_1">
+                                        <wm-filter-field name="animalType" field="animalType" displayname="Animal Type" widget="radioset" lookup-type="AnimalType" lookup-field="name" is-related="true" related-entity-name="AnimalType" is-range="false" type="string"
+                                            is-primary-key="false" generator="assigned" show="true" key="animalType" matchmode="startignorecase" filterexpressions="{&quot;condition&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;target&quot;:&quot;&quot;,&quot;type&quot;:&quot;string&quot;,&quot;matchMode&quot;:&quot;anywhereignorecase&quot;,&quot;value&quot;:&quot;&quot;,&quot;required&quot;:false}]}"
+                                            placeholder="" itemsperrow="xs-1 sm-1 md-1 lg-3"></wm-filter-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow14_1">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn28_1">
+                                        <wm-filter-field name="breed" field="breed" displayname="Breed" widget="autocomplete" is-range="false" type="string" is-primary-key="false" generator="assigned" show="true" key="breed" matchmode="startignorecase" filter-on="animalType"
+                                            placeholder="Search among available brres"></wm-filter-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow15_1">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn29_1">
+                                        <wm-filter-field name="size" field="size" displayname="Size" widget="radioset" is-range="false" type="string" is-primary-key="false" generator="assigned" show="true" key="size" matchmode="startignorecase" placeholder=""
+                                            itemsperrow="xs-1 sm-1 md-1 lg-3" dataset="bind:Variables.staticSizeVariable.dataSet" datafield="dataValue" displayfield="dataValue"></wm-filter-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow16_1">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn30_1">
+                                        <wm-filter-field name="isVaccinated" field="isVaccinated" displayname="Is Vaccinated" widget="toggle" is-range="false" type="boolean" is-primary-key="false" generator="assigned" show="true" key="isVaccinated" checkedvalue="true"
+                                            uncheckedvalue="false" placeholder=""></wm-filter-field>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                            <wm-filter-action key="filter" display-name="Filter" show="false" class="btn-primary" iconclass="wi wi-filter-list" title="Filter" action="filter()" disabled="false" widget-type="button" type="button"></wm-filter-action>
+                            <wm-filter-action key="clear" display-name="Clear" show="true" class="btn-default" iconclass="wi wi-trash" title="Clear" action="clearFilter()" disabled="false" widget-type="button" type="button"></wm-filter-action>
+                        </wm-livefilter>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Information" iconclass="wi wi-file-text" name="dialog1">
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="btn-primary" caption="Close" on-click="closeDialog()" name="button2"></wm-button>
+        </wm-dialogactions>
+        <wm-liveform errormessage="" title="Animal Info" iconclass="wi wi-edit" defaultmode="Edit" dataset="bind:Variables.Wepet2AnimalData.dataSet" captionalign="left" captionposition="top" name="AnimalLiveForm2" on-beforeservicecall="AnimalLiveForm1Beforeservicecall($event, $operation, $data, options)">
+            <wm-layoutgrid columns="3" name="layoutgrid4">
+                <wm-gridrow name="gridrow12">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn24">
+                        <wm-form-field name="name" displayname="Name" required="true" show="true" generator="assigned" primary-key="false" key="name" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn25">
+                        <wm-form-field name="breed" displayname="Breed" required="false" show="true" generator="assigned" primary-key="false" key="breed" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn26">
+                        <wm-form-field name="size" displayname="Size" required="true" show="true" generator="assigned" primary-key="false" key="size" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow13">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn27">
+                        <wm-form-field name="age" displayname="Age" required="true" show="true" generator="assigned" primary-key="false" key="age" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" tablet-display="true" widget="number"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn28">
+                        <wm-form-field name="description" displayname="Description" required="false" show="true" generator="assigned" primary-key="false" key="description" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true"
+                            tablet-display="true" widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn29">
+                        <wm-form-field name="gender" displayname="Gender" required="true" show="true" generator="assigned" primary-key="false" key="gender" type="string" is-related="false" maxchars="20" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow14">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn30">
+                        <wm-form-field name="street" displayname="Street" required="false" show="true" generator="assigned" primary-key="false" key="street" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn31">
+                        <wm-form-field name="city" displayname="City" required="false" show="true" generator="assigned" primary-key="false" key="city" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn32">
+                        <wm-form-field name="district" displayname="District" required="false" show="true" generator="assigned" primary-key="false" key="district" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow15">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn33">
+                        <wm-form-field name="state" displayname="State" required="false" show="true" generator="assigned" primary-key="false" key="state" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn34">
+                        <wm-form-field name="country" displayname="Country" required="false" show="true" generator="assigned" primary-key="false" key="country" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn35">
+                        <wm-form-field name="pincode" displayname="Pincode" required="false" show="true" generator="assigned" primary-key="false" key="pincode" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="number"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow16">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn36">
+                        <wm-form-field name="longitude" displayname="Longitude" required="false" show="true" generator="assigned" primary-key="false" key="longitude" type="big_decimal" is-related="false" step="1e-9" pc-display="true" mobile-display="true"
+                            tablet-display="true" widget="number" defaultvalue="bind:Variables.svGetLatLong.dataSet.results[$i].geometry.location.lng"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn37">
+                        <wm-form-field name="latitude" displayname="Latitude" required="false" show="true" generator="assigned" primary-key="false" key="latitude" type="big_decimal" is-related="false" step="1e-9" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="number" defaultvalue="bind:Variables.svGetLatLong.dataSet.results[$i].geometry.location.lat"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn38">
+                        <wm-form-field name="isVaccinated" displayname="Is Vaccinated" required="false" show="true" generator="assigned" primary-key="false" key="isVaccinated" type="boolean" is-related="false" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="checkbox"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow17">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn39">
+                        <wm-fileupload cleariconclass="wi wi-clear" cleariconhint="Clear" name="fileupload1" on-select="Variables.FileServiceUploadFile2.invoke()" maxfilesize="10" contenttype=".png image/* .jpg .jpeg .jpe .gif"></wm-fileupload>
+                        <wm-form-field name="imagePath" displayname="Image Path" required="false" show="false" generator="assigned" primary-key="false" key="imagePath" type="string" is-related="false" maxchars="2048" pc-display="true"
+                            mobile-display="true" tablet-display="true" widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn40">
+                        <wm-form-field name="animalType" displayname="Animal Type" required="true" show="true" generator="assigned" primary-key="false" key="animalType" type="list" is-related="true" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="select" defaultvalue="bind:Variables.Wepet2AnimalData.dataSet[$i].animalType.id" datafield="All Fields" dataset="bind:Variables.svGetAnimalType.dataSet" displayfield="name"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn41"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-form-field name="id" displayname="Id" required="true" show="false" generator="identity" primary-key="true" key="id" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" tablet-display="true" widget="number"></wm-form-field>
+            <wm-form-action key="reset" class="form-reset btn-default" iconclass="wi wi-refresh" action="reset()" display-name="Reset" show="true" type="button" update-mode="true"></wm-form-action>
+            <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+        </wm-liveform>
+    </wm-dialog>
+</wm-page>

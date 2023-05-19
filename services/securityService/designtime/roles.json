@@ -1,0 +1,19 @@
+[ {
+  "name" : "admin",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "AdminDashboard"
+  }
+}, {
+  "name" : "user",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "ngo",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "NgoAnimal"
+  }
+} ]

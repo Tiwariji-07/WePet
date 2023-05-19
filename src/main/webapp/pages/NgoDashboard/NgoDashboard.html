@@ -1,0 +1,277 @@
+<wm-page name="page1">
+    <wm-header content="NgoHeader" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="NgoPanel" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow1" padding="0em unset">
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn1">
+                        <wm-label name="mainHeading" caption="NGO Dashboard" class="h2" margin=".3em 0em 0em 0em" padding="unset unset unset .3em"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" horizontalalign="right" padding="1em 0em" name="gridcolumn50_1">
+                        <wm-switch datavalue="this week" dataset="this week, this month, this year" name="durationSwitch"></wm-switch>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow2">
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn4" padding=".5em">
+                        <wm-tile name="summaryOne" padding="3em 1em" class="bg-danger">
+                            <wm-layoutgrid name="layoutgrid2">
+                                <wm-gridrow name="gridrow4">
+                                    <wm-gridcolumn columnwidth="3" name="gridcolumn11" horizontalalign="center" class="col-xs-3">
+                                        <wm-icon name="globeIcon" iconclass="wi wi-globe fa-3x"></wm-icon>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="9" name="gridcolumn12" class="col-xs-9" padding="unset unset unset 1em">
+                                        <wm-label name="newVisitLabel" width="100%" caption="Rescued" class="text-uppercase p"></wm-label>
+                                        <wm-label width="100%" name="newVistValueLabel" caption="221" class="h3 p" margin="0px" color="#ffffff"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-tile>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn5" padding=".5em">
+                        <wm-tile name="summaryTwo" padding="3em 1em" class="bg-info">
+                            <wm-layoutgrid name="layoutgrid3">
+                                <wm-gridrow name="gridrow7">
+                                    <wm-gridcolumn columnwidth="3" horizontalalign="center" name="gridcolumn20" class="col-xs-3">
+                                        <wm-icon name="usdLabel" iconclass="wi wi-usd fa-3x"></wm-icon>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="9" name="gridcolumn21" class="col-xs-9" padding="unset unset unset 1em">
+                                        <wm-label width="100%" caption="Total Revenue" class="text-uppercase" name="revenueLabel"></wm-label>
+                                        <wm-label width="100%" caption="221" class="h3" name="revenueValueLabel" margin="0px" color="#ffffff"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-tile>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn6" padding=".5em">
+                        <wm-tile name="summaryThree" padding="3em 1em" class="bg-warning">
+                            <wm-layoutgrid name="layoutgrid4">
+                                <wm-gridrow name="gridrow8">
+                                    <wm-gridcolumn columnwidth="3" horizontalalign="center" name="gridcolumn22" class="col-xs-3">
+                                        <wm-icon name="userIcon" iconclass="wi wi-user fa-3x"></wm-icon>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="9" name="gridcolumn23" class="col-xs-9" padding="unset unset unset 1em">
+                                        <wm-label width="100%" caption="Outpatients" class="text-uppercase" name="outpatientsLabel"></wm-label>
+                                        <wm-label width="100%" caption="221" class="h3" name="outpatientsValueLabel" margin="0px" color="#ffffff"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-tile>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn10" padding=".5em">
+                        <wm-tile name="summaryFour" padding="3em 1em" class="bg-success">
+                            <wm-layoutgrid name="layoutgrid5">
+                                <wm-gridrow name="gridrow9">
+                                    <wm-gridcolumn columnwidth="3" horizontalalign="center" name="gridcolumn24" class="col-xs-3">
+                                        <wm-icon name="checkIcon" iconclass="wi wi-check fa-3x"></wm-icon>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="9" name="gridcolumn25" class="col-xs-9" padding="unset unset unset 1em">
+                                        <wm-label width="100%" caption="Admissions" class="text-uppercase" name="admissionsLabel"></wm-label>
+                                        <wm-label width="100%" caption="221" class="h3" name="admissionsValueLabel" margin="0px" color="#ffffff"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-tile>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow3">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn7" padding="1em .5em">
+                        <wm-panel collapsible="false" showheader="true" name="topDepartmentsByRevenuePanel" title="Top Departments By Revenue" height="28em" margin="0px" iconclass="wi wi-attach-money">
+                            <wm-chart type="Column" name="topDepartmentsByRevenueChart" offsetright="25" tooltips="true" showlegend="false" xaxislabel="Departments" yaxislabel="Revenue" yaxislabeldistance="12" theme="Retro" height="300"></wm-chart>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn8" padding="1em .5em">
+                        <wm-panel name="headCountPanel" title="Head Count" margin="0px" iconclass="wi wi-assignment-ind" height="28em">
+                            <wm-tabs name="wardsTabs" height="300">
+                                <wm-tabpane name="wardsTabpane" heading="Wards" class="text-uppercase" padding="unset 0px">
+                                    <wm-list listclass="list-group" template="true" name="wardsList" dataset="1, 2, 3, 4, 5" statehandler="none">
+                                        <wm-listtemplate layout="panel" name="wardsListtemplate">
+                                            <wm-layoutgrid class="gridlayout" name="layoutgrid9">
+                                                <wm-gridrow name="gridrow13" borderstyle="solid" bordercolor="#DDD" borderwidth="0px 0px 1px 0px" padding="1em unset">
+                                                    <wm-gridcolumn columnwidth="1" data-template-ctr="true" name="gridcolumn32" class="col-xs-2">
+                                                        <wm-picture class="picture" shape="circle" width="24" name="patientPicture" picturesource="http://www.wavemaker.com/examples/comedians/stanleylaurel.jpg"></wm-picture>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="2" data-template-ctr="true" name="gridcolumn33" class="col-xs-3">
+                                                        <wm-label width="100%" caption="Role" name="wardRoleLabel"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="2" name="gridcolumn34" class="col-xs-3">
+                                                        <wm-label width="100%" caption="User Id" name="wardUserIdlabel" class="p text-ellipsis"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="7" name="gridcolumn35" class="col-xs-4">
+                                                        <wm-label width="100%" caption="Stanley Laurel" name="wardNameLabel" class="text-ellipsis p"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-listtemplate>
+                                    </wm-list>
+                                </wm-tabpane>
+                                <wm-tabpane name="patientsTabpane" heading="Patients">
+                                    <wm-list listclass="list-group" template="true" dataset="1, 2, 3, 4, 5" borderstyle="none" name="patientsList" statehandler="none">
+                                        <wm-listtemplate layout="gridlayout" name="patientsListTemplate">
+                                            <wm-layoutgrid class="gridlayout" name="layoutgrid9_1">
+                                                <wm-gridrow name="gridrow16" bordercolor="#DDD" borderstyle="solid" borderwidth="0px 0px 1px 0px" padding="1em 0em 1em unset">
+                                                    <wm-gridcolumn columnwidth="2" data-template-ctr="true" name="gridcolumn33" class="col-xs-3">
+                                                        <wm-label width="100%" caption="Role" name="patientRoleLabel"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="2" name="gridcolumn34" class="col-xs-3">
+                                                        <wm-label caption="User Id" name="patientUserIdlabel" class="p text-ellipsis"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="8" name="gridcolumn35" class="col-xs-6">
+                                                        <wm-label caption="Stanley Laurel" name="patientNameLabel" class="p text-ellipsis"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-listtemplate>
+                                    </wm-list>
+                                </wm-tabpane>
+                                <wm-tabpane name="doctorTabpane" heading="Doctors">
+                                    <wm-list listclass="list-group" template="true" name="doctorList" dataset="1, 2, 3, 4, 5" statehandler="none">
+                                        <wm-listtemplate layout="gridlayout" name="doctorListtemplate">
+                                            <wm-layoutgrid class="gridlayout" name="layoutgrid10">
+                                                <wm-gridrow name="gridrow17" borderstyle="solid" bordercolor="#DDD" borderwidth="0px 0px 1px 0px" padding="1em unset">
+                                                    <wm-gridcolumn columnwidth="2" name="gridcolumn34" class="col-xs-4">
+                                                        <wm-label width="100%" caption="User Id" name="doctorUserIdlabel"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="10" name="gridcolumn35" class="col-xs-8">
+                                                        <wm-label width="100%" caption="Stanley Laurel" name="doctorNameLabel"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-listtemplate>
+                                    </wm-list>
+                                </wm-tabpane>
+                            </wm-tabs>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow9_1">
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn21_1" padding="1em .5em">
+                        <wm-panel collapsible="false" showheader="true" name="inPatientOutPatientEnrollmentsPanel" actions="Refresh, Change Date Range, Settings" title="In-Patient vs Out-Patient Enrollments" height="28em" margin="0px" iconclass="wi wi-user">
+                            <wm-chart type="Line" name="inPatientOutPatientEnrollmentsChart" xaxislabel="Weeks" yaxislabel="Number of Patients" theme="Azure" margin="0em 0em 3em 0em" height="300"></wm-chart>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn22_1" padding="1em .5em">
+                        <wm-panel collapsible="false" showheader="true" name="progressStatsPanel" title="Progress Stats" height="28em" margin="0px" iconclass="wi wi-assessment">
+                            <wm-layoutgrid name="layoutgrid7" marginunit="em" height="310">
+                                <wm-gridrow name="gridrow11">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn26" borderstyle="none" borderwidth="0px 0px 1px 0px" padding="1em">
+                                        <wm-label name="currentVisitsLabel" caption="Current Visits"></wm-label>
+                                        <wm-progress-bar name="currentVisitsProgress" datavalue="71" height="auto" displayformat="absolute" show="true" type="warning" margin="0px" captionplacement="inside"></wm-progress-bar>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow12">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn29" borderstyle="none" borderwidth="0px 0px 1px 0px" padding="1em">
+                                        <wm-label caption="Day 1 Visits" name="day1VisitsLabel"></wm-label>
+                                        <wm-progress-bar datavalue="94" name="day1VisitsProgress" type="danger" height="auto" margin="0px" captionplacement="inside"></wm-progress-bar>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow13_1">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn32_1" padding="1em">
+                                        <wm-label caption="Day 2 Visits" name="day2VisitsLabel"></wm-label>
+                                        <wm-progress-bar datavalue="35" name="day2VisitsProgress" type="info" height="auto" margin="0px" captionplacement="inside"></wm-progress-bar>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow17_1">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn33_3" padding="1em">
+                                        <wm-label caption="Day 3 Visits" name="day3VisitsLabel"></wm-label>
+                                        <wm-progress-bar datavalue="40" type="success" height="auto" name="day3VisitsProgress" margin="0px" captionplacement="inside"></wm-progress-bar>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow18">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn34_2" padding="1em 1em 2em 1em">
+                                        <wm-label caption="Day 4 Visits" name="day4VisitsLabel" marginunit="em"></wm-label>
+                                        <wm-progress-bar datavalue="26" type="default" height="auto" name="day4VisitsProgress" margin="0px" captionplacement="inside"></wm-progress-bar>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow14">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn33_1" padding="1em .5em">
+                        <wm-livetable name="patientsLivegrid" service="hrdb@User">
+                            <wm-table deleterow="false" updaterow="false" insertrow="false" gridfirstrowselect="true" readonlygrid="false" name="patientsGrid" shownavigation="true" gridsearch="true" title="Patients" subheading="Here is the list of patients"
+                                iconclass="wi wi-verified-user" statehandler="none">
+                                <wm-table-column binding="patientname" caption="Patient Name" type="string" readonly="false" search-placeholder="Search" pcdisplay="true" mobiledisplay="true"></wm-table-column>
+                                <wm-table-column binding="patientid" caption="Patient Id" type="string" readonly="false" search-placeholder="Search" pcdisplay="true" mobiledisplay="true"></wm-table-column>
+                                <wm-table-column binding="admittedon" caption="Admitted On" type="string" readonly="false" search-placeholder="Search" pcdisplay="true" mobiledisplay="true"></wm-table-column>
+                                <wm-table-column binding="relivedon" caption="Relived On" type="string" readonly="false" search-placeholder="Search" pcdisplay="true" mobiledisplay="true"></wm-table-column>
+                            </wm-table>
+                        </wm-livetable>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow18_1">
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn34_3" padding="1em .5em">
+                        <wm-tile backgroundcolor="#3B5998" color="#FFFFFF" name="facebookTile" horizontalalign="center" padding="3em unset unset unset">
+                            <wm-icon name="facebookIcon" iconclass="fa fa-facebook fa-3x"></wm-icon>
+                            <wm-layoutgrid name="layoutgrid14">
+                                <wm-gridrow name="gridrow24" class="bordered-top" padding="1em unset unset unset">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn49" horizontalalign="center" class="col-xs-6 bordered-right">
+                                        <wm-label name="facebookfriendsValueLabel" caption="89k" fontunit="em" class="h2" color="inherit" margin="0px unset"></wm-label>
+                                        <wm-label name="facebookfriendsLabel" caption="Friends" class="p text-uppercase"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn50" horizontalalign="center" class="col-xs-6">
+                                        <wm-label caption="459" name="facebookfeedLabel" class="h2" margin="0px unset" color="inherit"></wm-label>
+                                        <wm-label caption="Feeds" name="facebookfeedValueLabel" class="p text-uppercase"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-tile>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn37" padding="1em .5em">
+                        <wm-tile color="#FFFFFF" backgroundcolor="#00ACED" name="twitterTile" horizontalalign="center" padding="3em unset unset unset">
+                            <wm-icon iconclass="fa fa-twitter fa-3x" name="twitterIcon"></wm-icon>
+                            <wm-layoutgrid name="layoutgrid11">
+                                <wm-gridrow name="gridrow22" padding="1em unset unset unset" class="bordered-top">
+                                    <wm-gridcolumn columnwidth="6" horizontalalign="center" name="gridcolumn42" class="col-xs-6 bordered-right">
+                                        <wm-label caption="244k" name="twitterfollowersLabel" class="h2" color="inherit" margin="0px unset"></wm-label>
+                                        <wm-label caption="Followers" class="p text-uppercase" name="twitterfollowersValueLabel"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" horizontalalign="center" name="gridcolumn43_1" class="col-xs-6">
+                                        <wm-label caption="44" class="h2" color="inherit" margin="0px unset" name="twittertweetsLabel"></wm-label>
+                                        <wm-label caption="Tweets" class="p text-uppercase" name="twittertweetsValueLabel"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-tile>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn40" padding="1em .5em">
+                        <wm-tile color="#FFFFFF" backgroundcolor="#4875B4" name="linkedinTile" padding="3em unset unset unset" horizontalalign="center">
+                            <wm-icon iconclass="fa fa-linkedin fa-3x" name="linkedinIcon"></wm-icon>
+                            <wm-layoutgrid name="layoutgrid12">
+                                <wm-gridrow name="gridrow24_1" padding="1em 0em unset 0em" class="bordered-top">
+                                    <wm-gridcolumn columnwidth="6" horizontalalign="center" name="gridcolumn45" class="col-xs-6 bordered-right">
+                                        <wm-label caption="250+" class="h2" color="inherit" margin="0px unset" name="linkedincontactsLabel"></wm-label>
+                                        <wm-label caption="Contacts" class="p text-uppercase" name="linkedincontactsValueLabel"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" horizontalalign="center" name="gridcolumn46_1" class="col-xs-6">
+                                        <wm-label caption="343" class="h2" color="inherit" margin="0px unset" name="linkedinfeedsLabel"></wm-label>
+                                        <wm-label caption="Feeds" class="p text-uppercase" name="linkedinfeedsValueLabel"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-tile>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn43" padding="1em .5em">
+                        <wm-tile color="#FFFFFF" backgroundcolor="#BB4B39" name="googleTile" horizontalalign="center" padding="3em unset unset unset">
+                            <wm-icon iconclass="fa fa-google-plus fa-3x" name="googleIcon"></wm-icon>
+                            <wm-layoutgrid name="layoutgrid13">
+                                <wm-gridrow name="gridrow26" padding="1em 0em unset 0em" class="bordered-top">
+                                    <wm-gridcolumn columnwidth="6" horizontalalign="center" name="gridcolumn48" class="col-xs-6 bordered-right">
+                                        <wm-label caption="1k" class="h2" color="inherit" margin="0px unset" name="googlefollowersLabel"></wm-label>
+                                        <wm-label caption="Followers" class="p text-uppercase" name="googlefollowersValueLabel"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" horizontalalign="center" name="gridcolumn49_1" class="col-xs-6">
+                                        <wm-label caption="23" class="h2" color="inherit" margin="0px unset" name="googlecirlesLabel"></wm-label>
+                                        <wm-label caption="Circles" class="p text-uppercase" name="googlecirlesValueLabel"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-tile>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

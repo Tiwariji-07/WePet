@@ -1,0 +1,124 @@
+[ {
+  "name" : "AdminDashboard",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "AnimalDetails",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "animalId",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "AnimalStatus",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "id",
+    "type" : "integer"
+  }, {
+    "name" : "status",
+    "type" : "boolean"
+  } ]
+}, {
+  "name" : "Common",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "LoggedinUserHeader",
+  "type" : "HEADER",
+  "params" : [ ]
+}, {
+  "name" : "Login",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "NgoAnimal",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "NgoDashboard",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "NgoHeader",
+  "type" : "HEADER",
+  "params" : [ ]
+}, {
+  "name" : "NgoPanel",
+  "type" : "LEFTNAV",
+  "params" : [ ]
+}, {
+  "name" : "NgoProfile",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "ngoId",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "NgoRescue",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "NgoVolunteers",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "PetDetails",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "animalId",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "UserAdoption",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "UserRegister",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "UserRehome",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "UserRescue",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "UserVolunteer",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "footer",
+  "type" : "FOOTER",
+  "params" : [ ]
+}, {
+  "name" : "header",
+  "type" : "HEADER",
+  "params" : [ ]
+}, {
+  "name" : "leftnav",
+  "type" : "LEFTNAV",
+  "params" : [ ]
+}, {
+  "name" : "rightnav",
+  "type" : "RIGHTNAV",
+  "params" : [ ]
+}, {
+  "name" : "signup",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "topnav",
+  "type" : "TOPNAV",
+  "params" : [ ]
+}, {
+  "name" : "userHome",
+  "type" : "PAGE",
+  "params" : [ ]
+} ]

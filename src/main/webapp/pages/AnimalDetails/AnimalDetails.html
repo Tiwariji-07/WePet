@@ -1,0 +1,127 @@
+<wm-partial name="partial1">
+    <wm-container name="container1">
+        <wm-layoutgrid name="layoutgrid1" padding="2em 0em">
+            <wm-gridrow name="gridrow11">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn16">
+                    <wm-breadcrumb dataset="Home, Page" class="path-based" name="breadcrumb2"></wm-breadcrumb>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow1">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn1" class="col-xs-12 col-sm-12 col-md-6">
+                    <wm-layoutgrid name="layoutgrid4">
+                        <wm-gridrow name="gridrow10">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn28">
+                                <wm-picture name="picture1" width="100%" picturesource="bind:Variables.svGetAnimalById.firstRecord.imagePath" bordercolor="#D1D7DA" borderstyle="solid" shape="rounded" backgroundcolor="#ffffff" borderwidth="1px" padding=".5em"></wm-picture>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="12" name="gridcolumn2" class="col-xs-12 col-sm-12 col-md-6">
+                    <wm-layoutgrid name="layoutgrid2" padding="0em 2em">
+                        <wm-gridrow name="gridrow4">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn9_1">
+                                <wm-label padding="unset 0.5em" name="label19_1" caption="bind:Variables.SVgetEachAnimal.dataSet.name"></wm-label>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow5">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn12">
+                                <wm-label name="label2" display="inline" caption="I'm being cared for by"></wm-label>
+                                <wm-label padding="unset 0.5em" name="label20_1" caption="bind:Variables.SVgetEachAnimal.dataSet.organization.name"></wm-label>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow6"></wm-gridrow>
+                        <wm-gridrow name="gridrow8"></wm-gridrow>
+                        <wm-gridrow name="gridrow9_1"></wm-gridrow>
+                        <wm-gridrow name="gridrow12_1">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn18">
+                                <wm-gridcolumn columnwidth="6" name="gridcolumn15_1">
+                                    <wm-button name="button6" caption="Adopt" width="100%" class="btn-primary btn-lg"></wm-button>
+                                </wm-gridcolumn>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow17_1">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn28_2"></wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-tabs name="tabs1">
+                            <wm-tabpane name="tabpane1" heading="Description" title="Description">
+                                <wm-html name="html2" content="bind:Variables.SVgetEachAnimal.dataSet.description">bind:Variables.SVgetEachAnimal.dataSet.description</wm-html>
+                            </wm-tabpane>
+                            <wm-tabpane name="tabpane2" heading="Specifications" title="About me">
+                                <wm-layoutgrid name="layoutgrid5">
+                                    <wm-gridrow name="gridrow13_1">
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn23">
+                                            <wm-label padding="unset 0.5em" name="label9" caption="Breed"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn24">
+                                            <wm-label padding="unset 0.5em" name="label11" caption="bind:Variables.SVgetEachAnimal.dataSet.breed"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn20">
+                                            <wm-label padding="unset 0.5em" name="label13" caption="size"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn15">
+                                            <wm-label padding="unset 0.5em" name="label15" caption="bind:Variables.SVgetEachAnimal.dataSet.size"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow14">
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn25">
+                                            <wm-label padding="unset 0.5em" name="label10" caption="Age"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn17">
+                                            <wm-label padding="unset 0.5em" name="label12" caption="bind:Variables.SVgetEachAnimal.dataSet.age"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn18_1">
+                                            <wm-label padding="unset 0.5em" name="label14" caption="Gender"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn26">
+                                            <wm-label padding="unset 0.5em" name="label16" caption="bind:Variables.SVgetEachAnimal.dataSet.gender"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-tabpane>
+                        </wm-tabs>
+                    </wm-layoutgrid>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow13">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn19" padding="1em .5em">
+                    <wm-label name="label5" class="h3" caption="Shelter Contact" margin="0em"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow15">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn27">
+                    <wm-layoutgrid name="layoutgrid6">
+                        <wm-gridrow name="gridrow16">
+                            <wm-gridcolumn columnwidth="3" name="gridcolumn28_1">
+                                <wm-label padding="unset 0.5em" caption="Name" name="label17"></wm-label>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="3" name="gridcolumn29">
+                                <wm-label padding="unset 0.5em" caption="bind:Variables.getEachAnimal.firstRecord.organization.name" name="label18"></wm-label>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="3" name="gridcolumn30">
+                                <wm-label padding="unset 0.5em" caption="Phone" name="label19"></wm-label>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="3" name="gridcolumn31">
+                                <wm-label padding="unset 0.5em" caption="bind:Variables.getEachAnimal.firstRecord.organization.phoneNo" name="label20"></wm-label>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow17">
+                            <wm-gridcolumn columnwidth="3" name="gridcolumn32">
+                                <wm-label padding="unset 0.5em" caption="Email" name="label21"></wm-label>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="3" name="gridcolumn33">
+                                <wm-label padding="unset 0.5em" caption="bind:Variables.getEachAnimal.firstRecord.organization.email" name="label22"></wm-label>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="3" name="gridcolumn34">
+                                <wm-label padding="unset 0.5em" caption="Address" name="label23"></wm-label>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="3" name="gridcolumn35">
+                                <wm-label padding="unset 0.5em" caption="bind:Variables.getEachAnimal.firstRecord.organization.street + &quot;, &quot; + Variables.getEachAnimal.firstRecord.organization.city + &quot;, &quot; + Variables.getEachAnimal.firstRecord.organization.state + &quot;, &quot; + Variables.getEachAnimal.firstRecord.organization.country + &quot;, &quot;+Variables.getEachAnimal.firstRecord.organization.pincode"
+                                    name="label24"></wm-label>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-container>
+</wm-partial>

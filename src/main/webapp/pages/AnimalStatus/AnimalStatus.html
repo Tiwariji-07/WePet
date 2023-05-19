@@ -1,0 +1,139 @@
+<wm-partial name="partial1">
+    <wm-container name="container1"></wm-container>
+    <wm-layoutgrid name="layoutgrid3">
+        <wm-gridrow name="gridrow4">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn8">
+                <wm-list listclass="list-group" itemsperrow="xs-1 sm-2 md-3 lg-3" template="true" template-name="Personal Spotlight" class="list-card" statehandler="none" name="AnimalList1" dataset="bind:Variables.Wepet2AnimalData1.dataSet" navigation="Scroll">
+                    <wm-listtemplate layout="media" name="listtemplate2">
+                        <wm-card name="Picture" picturesource="bind:Variables.Wepet2AnimalData1.dataSet[$i].imagePath">
+                            <wm-card-content padding="1.25em" name="card_content2">
+                                <wm-label name="Name" class="h4 text-muted" width="100%" caption="bind:Variables.Wepet2AnimalData1.dataSet[$i].name" whitespace="nowrap" margin="0px unset unset unset"></wm-label>
+                                <wm-label name="Title" caption="bind:Variables.Wepet2AnimalData1.dataSet[$i].breed" class="h4" margin="0px unset unset unset"></wm-label>
+                                <wm-label name="Description" caption="bind:Variables.Wepet2AnimalData1.dataSet[$i].city" class="p text-muted" margin="0px unset unset unset"></wm-label>
+                                <wm-label name="Date" caption="bind:Variables.Wepet2AnimalData1.dataSet[$i].uploadDate | toDate: 'dd/MM/yyyy'" class="text-muted" margin="0.6em unset unset unset" fontsize="1.143" fontunit="em"></wm-label>
+                            </wm-card-content>
+                            <wm-card-footer horizontalalign="center" name="card_footer1">
+                                <wm-layoutgrid name="layoutgrid4">
+                                    <wm-gridrow name="gridrow4_1">
+                                        <wm-gridcolumn columnwidth="6" horizontalalign="left" class="col-xs-4" name="gridcolumn7">
+                                            <wm-button class="btn-default btn-block btn-success" caption="Mark as adopted" type="button" margin="unset 1em unset unset" name="button1" on-click="Variables.dvEditAnimal.updateRecord()" color="#ffffff"></wm-button>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="6" horizontalalign="center" class="col-xs-4" name="gridcolumn8_1">
+                                            <wm-button class="btn-default btn-block btn-danger" caption="Delete" type="button" margin="unset 0.5em unset 1em" on-click="Variables.dvDeleteAnimal.deleteRecord()" name="button2" color="#ffffff"></wm-button>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-card-footer>
+                        </wm-card>
+                    </wm-listtemplate>
+                </wm-list>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Information" iconclass="wi wi-file-text" name="dialog1">
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="btn-primary" caption="Close" on-click="closeDialog()" name="button3"></wm-button>
+        </wm-dialogactions>
+        <wm-liveform errormessage="" title="Animal Info" iconclass="wi wi-edit" defaultmode="Edit" dataset="bind:Variables.dvEditAnimal.dataSet" captionalign="left" captionposition="top" name="AnimalLiveForm1">
+            <wm-layoutgrid columns="3" name="layoutgrid5">
+                <wm-gridrow name="gridrow11">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn26">
+                        <wm-form-field name="name" displayname="Name" required="true" show="true" generator="assigned" primary-key="false" key="name" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.svGetAnimalById.firstRecord.name"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn27">
+                        <wm-form-field name="breed" displayname="Breed" required="false" show="true" generator="assigned" primary-key="false" key="breed" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn28">
+                        <wm-form-field name="size" displayname="Size" required="true" show="true" generator="assigned" primary-key="false" key="size" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow12">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn29">
+                        <wm-form-field name="age" displayname="Age" required="true" show="true" generator="assigned" primary-key="false" key="age" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" tablet-display="true" widget="number"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn30">
+                        <wm-form-field name="description" displayname="Description" required="false" show="true" generator="assigned" primary-key="false" key="description" type="string" is-related="false" maxchars="2048" pc-display="true" mobile-display="true"
+                            tablet-display="true" widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn31">
+                        <wm-form-field name="gender" displayname="Gender" required="true" show="true" generator="assigned" primary-key="false" key="gender" type="string" is-related="false" maxchars="20" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow13">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn32">
+                        <wm-form-field name="street" displayname="Street" required="false" show="true" generator="assigned" primary-key="false" key="street" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn33">
+                        <wm-form-field name="city" displayname="City" required="false" show="true" generator="assigned" primary-key="false" key="city" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn34">
+                        <wm-form-field name="district" displayname="District" required="false" show="true" generator="assigned" primary-key="false" key="district" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow14">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn35">
+                        <wm-form-field name="state" displayname="State" required="false" show="true" generator="assigned" primary-key="false" key="state" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn36">
+                        <wm-form-field name="country" displayname="Country" required="false" show="true" generator="assigned" primary-key="false" key="country" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn37">
+                        <wm-form-field name="pincode" displayname="Pincode" required="false" show="true" generator="assigned" primary-key="false" key="pincode" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="number"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow15">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn38">
+                        <wm-form-field name="longitude" displayname="Longitude" required="false" show="true" generator="assigned" primary-key="false" key="longitude" type="big_decimal" is-related="false" step="1e-9" pc-display="true" mobile-display="true"
+                            tablet-display="true" widget="number"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn39">
+                        <wm-form-field name="latitude" displayname="Latitude" required="false" show="true" generator="assigned" primary-key="false" key="latitude" type="big_decimal" is-related="false" step="1e-9" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="number"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn40">
+                        <wm-form-field name="isVaccinated" displayname="Is Vaccinated" required="false" show="true" generator="assigned" primary-key="false" key="isVaccinated" type="boolean" is-related="false" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="checkbox"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow16">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn41">
+                        <wm-form-field name="imagePath" displayname="Image Path" required="false" show="true" generator="assigned" primary-key="false" key="imagePath" type="string" is-related="false" maxchars="2048" pc-display="true" mobile-display="true"
+                            tablet-display="true" widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn42">
+                        <wm-form-field name="isAdopted" displayname="Is Adopted" required="false" show="true" generator="assigned" primary-key="false" key="isAdopted" type="boolean" is-related="false" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="checkbox"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn43">
+                        <wm-form-field name="uploadDate" displayname="Upload Date" required="false" show="true" generator="assigned" primary-key="false" key="uploadDate" type="datetime" is-related="false" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="datetime"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow17">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn44">
+                        <wm-form-field name="animalType" displayname="Animal Type" required="true" show="true" generator="assigned" primary-key="false" key="animalType" type="list" is-related="true" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="select"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn45">
+                        <wm-form-field name="organization" displayname="Organization" required="false" show="true" generator="assigned" primary-key="false" key="organization" type="list" is-related="true" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="select"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn46"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-form-field name="id" displayname="Id" required="true" show="false" generator="identity" primary-key="true" key="id" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" tablet-display="true" widget="number"></wm-form-field>
+            <wm-form-action key="reset" class="form-reset btn-default" iconclass="wi wi-refresh" action="reset()" display-name="Reset" show="true" type="button" update-mode="true"></wm-form-action>
+            <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+        </wm-liveform>
+    </wm-dialog>
+</wm-partial>

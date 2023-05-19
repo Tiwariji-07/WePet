@@ -1,0 +1,28 @@
+<wm-partial name="header" type="header">
+    <wm-layoutgrid name="layoutgrid2" class="headercolor">
+        <wm-gridrow name="gridrow2">
+            <wm-gridcolumn columnwidth="4" name="gridcolumn3">
+                <wm-picture resizemode="cover" name="picture2" hint="logo" picturesource="resources/images/imagelists/wepet-logo.png" height="70" margin="unset unset unset 10px"></wm-picture>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="4" name="gridcolumn6">
+                <wm-nav type="pills" autoclose="outsideClick" name="nav1" layout="justified">
+                    <wm-nav-item name="nav_item1">
+                        <wm-anchor caption="Home" name="anchor1" on-click="Actions.goToPage_Main.invoke()" fontweight="bold" tabindex="1" color="#ffb100"></wm-anchor>
+                    </wm-nav-item>
+                    <wm-nav-item name="nav_item2">
+                        <wm-anchor caption="Adopt" name="anchor2" on-click="Actions.goToPage_UserAdoption.invoke()" fontweight="bold" tabindex="2" color="#ffb100"></wm-anchor>
+                    </wm-nav-item>
+                    <wm-nav-item name="nav_item3">
+                        <wm-anchor caption="Rescue" name="anchor3" on-click="Actions.goToPage_UserRescue.invoke()" fontweight="bold" tabindex="3" color="#ffb100"></wm-anchor>
+                    </wm-nav-item>
+                    <wm-nav-item name="nav_item5">
+                        <wm-anchor name="anchor6" iconclass="" caption="Volunteer" fontweight="bold" tabindex="4" on-click="Actions.goToPage_UserVolunteer.invoke()" color="#ffb100"></wm-anchor>
+                    </wm-nav-item>
+                </wm-nav>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="4" name="gridcolumn3_1" horizontalalign="right">
+                <wm-button class="btn-default" caption="Logout" type="button" margin="1em 0.5em unset 0.5em" name="button1" iconclass="wm-sl-l sl-logout" on-click="Actions.logoutAction.invoke()" backgroundcolor="#ffb100" color="#ffffff" fontweight="bold"></wm-button>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-partial>

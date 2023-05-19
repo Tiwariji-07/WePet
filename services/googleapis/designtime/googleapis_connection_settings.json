@@ -1,0 +1,35 @@
+{
+  "endpointAddress" : "https://maps.googleapis.com/maps/api/geocode/json",
+  "method" : "GET",
+  "headers" : { },
+  "redirectEnabled" : true,
+  "requestBody" : "",
+  "queryParams" : {
+    "address" : "lothkunta+hyderabad",
+    "key" : "AIzaSyADRRvGAn-Q2TcJsk0uxZ0J-qPHmlXK24A"
+  },
+  "authDetails" : null,
+  "contentType" : "application/json",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "Content-Type" : [ "application/json; charset=UTF-8" ],
+      "Date" : [ "Tue, 09 May 2023 08:51:46 GMT" ],
+      "Pragma" : [ "no-cache" ],
+      "Expires" : [ "Fri, 01 Jan 1990 00:00:00 GMT" ],
+      "Cache-Control" : [ "no-cache, must-revalidate" ],
+      "Vary" : [ "Accept-Language" ],
+      "Access-Control-Allow-Origin" : [ "*" ],
+      "X-Goog-Maps-Metro-Area" : [ "Hyderabad" ],
+      "Server" : [ "mafe" ],
+      "X-XSS-Protection" : [ "0" ],
+      "X-Frame-Options" : [ "SAMEORIGIN" ],
+      "Server-Timing" : [ "gfet4t7; dur=129" ],
+      "Alt-Svc" : [ "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000" ],
+      "Transfer-Encoding" : [ "chunked" ]
+    },
+    "responseBody" : "{\"results\":[{\"address_components\":[{\"long_name\":\"Lothukunta\",\"short_name\":\"Lothukunta\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_2\",\"political\",\"sublocality\",\"sublocality_level_1\",\"locality\",\"political\",\"administrative_area_level_3\",\"political\",\"administrative_area_level_1\",\"political\",\"country\",\"political\"]}],\"formatted_address\":\"Lothukunta, Alwal, Secunderabad, Telangana, India\",\"geometry\":{\"bounds\":{\"northeast\":{\"lat\":17.5037411,\"lng\":78.5185411},\"southwest\":{\"lat\":17.4926146,\"lng\":78.5100433}},\"location\":{\"lat\":17.4958171,\"lng\":78.5128388},\"location_type\":\"APPROXIMATE\",\"viewport\":{\"northeast\":{\"lat\":17.5037411,\"lng\":78.5185411},\"southwest\":{\"lat\":17.4926146,\"lng\":78.5100433}}},\"place_id\":\"ChIJD3UkSuGayzsRmFjYoQNhgBw\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_2\"]}],\"status\":\"OK\"}",
+    "convertedResponse" : null
+  }
+}

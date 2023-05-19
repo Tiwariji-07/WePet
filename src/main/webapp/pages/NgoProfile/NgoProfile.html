@@ -1,0 +1,288 @@
+<wm-page pagetitle="Ngo Profile" name="page1">
+    <wm-header content="NgoHeader" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="NgoPanel" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-container name="container1">
+                <wm-layoutgrid name="layoutgrid2_1">
+                    <wm-gridrow name="gridrow8_1">
+                        <wm-gridcolumn columnwidth="6" name="_dummy_text_gridcolumn15_1"></wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn16_1" horizontalalign="right">
+                            <wm-button class="btn-default" caption="Edit" type="button" margin="unset 0.5em" name="button3" on-click="Widgets.dialog2.open()" iconclass="wi wi-mode-edit"></wm-button>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow9_1">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn17_1">
+                            <wm-layoutgrid name="layoutgrid5">
+                                <wm-gridrow name="gridrow19">
+                                    <wm-gridcolumn columnwidth="2" name="gridcolumn38">
+                                        <wm-picture resizemode="contain" name="picture2" shape="circle" picturesource="bind:Variables.getNgoDetails.dataSet[$i].profilePic" pictureaspect="None" backgroundsize="30px,30px" class="img-responsive"></wm-picture>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="5" name="gridcolumn39">
+                                        <wm-linearlayout direction="column" spacing="4" padding="4px 4px 4px 20px" name="linearlayout1">
+                                            <wm-linearlayoutitem name="linearlayoutitem1">
+                                                <wm-label padding="unset 0.5em" name="label6" caption="bind:Variables.getNgoDetails.dataSet[$i].name" class="h3" fontweight="bold"></wm-label>
+                                            </wm-linearlayoutitem>
+                                            <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem2">
+                                                <wm-label padding="unset 0.5em" name="label7" caption="bind:Variables.getNgoDetails.dataSet[$i].approvalStatus" class="h6"></wm-label>
+                                            </wm-linearlayoutitem>
+                                            <wm-linearlayoutitem name="linearlayoutitem3">
+                                                <wm-label padding="unset 0.5em" name="label8" caption="bind:Variables.getNgoDetails.dataSet[$i].city+&quot;,&quot;+Variables.getNgoDetails.dataSet[$i].state" class="h6"></wm-label>
+                                            </wm-linearlayoutitem>
+                                        </wm-linearlayout>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="5" name="gridcolumn42">
+                                        <wm-layoutgrid name="layoutgrid6_1">
+                                            <wm-gridrow name="gridrow21">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn43">
+                                                    <wm-label padding="unset 0.5em" name="label9" caption="Contact Information" class="h3" fontweight="bold"></wm-label>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow22">
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn45">
+                                                    <wm-linearlayout direction="column" spacing="4" padding="4px" name="linearlayout2">
+                                                        <wm-linearlayoutitem name="linearlayoutitem4">
+                                                            <wm-label padding="unset 0.5em" name="label10" caption="Email" fontstyle="italic"></wm-label>
+                                                        </wm-linearlayoutitem>
+                                                        <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem5">
+                                                            <wm-label padding="unset 0.5em" name="label11" caption="bind:Variables.getNgoDetails.dataSet[$i].email" class="h4" fontweight="bold"></wm-label>
+                                                        </wm-linearlayoutitem>
+                                                    </wm-linearlayout>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn46">
+                                                    <wm-linearlayout direction="column" spacing="4" padding="4px" name="linearlayout3">
+                                                        <wm-linearlayoutitem name="linearlayoutitem7">
+                                                            <wm-label padding="unset 0.5em" name="label12" fontstyle="italic" caption="Phone no"></wm-label>
+                                                        </wm-linearlayoutitem>
+                                                        <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem8">
+                                                            <wm-label padding="unset 0.5em" name="label13" class="h4" fontweight="bold" caption="bind:Variables.getNgoDetails.dataSet[$i].phoneNo"></wm-label>
+                                                        </wm-linearlayoutitem>
+                                                    </wm-linearlayout>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow17">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn36">
+                            <wm-layoutgrid name="layoutgrid7">
+                                <wm-gridrow name="gridrow24">
+                                    <wm-gridcolumn columnwidth="12" name="gridcolumn49">
+                                        <wm-label padding="unset 0.5em" caption="Address" class="h3" fontweight="bold" name="label18"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow25_1">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn50">
+                                        <wm-linearlayout direction="column" spacing="4" padding="4px" name="linearlayout6">
+                                            <wm-linearlayoutitem name="linearlayoutitem13">
+                                                <wm-label padding="unset 0.5em" caption="Street" fontstyle="italic" name="label19"></wm-label>
+                                            </wm-linearlayoutitem>
+                                            <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem14">
+                                                <wm-label padding="unset 0.5em" caption="bind:Variables.getNgoDetails.dataSet[$i].street" class="h4" fontweight="bold" name="label20"></wm-label>
+                                            </wm-linearlayoutitem>
+                                        </wm-linearlayout>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn51">
+                                        <wm-linearlayout direction="column" spacing="4" padding="4px" name="linearlayout7">
+                                            <wm-linearlayoutitem name="linearlayoutitem15">
+                                                <wm-label padding="unset 0.5em" fontstyle="italic" caption="City" name="label21"></wm-label>
+                                            </wm-linearlayoutitem>
+                                            <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem16">
+                                                <wm-label padding="unset 0.5em" class="h4" fontweight="bold" caption="bind:Variables.getNgoDetails.dataSet[$i].city" name="label22"></wm-label>
+                                            </wm-linearlayoutitem>
+                                        </wm-linearlayout>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow26_1">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn53_1">
+                                        <wm-linearlayout direction="column" spacing="4" padding="4px" name="linearlayout8">
+                                            <wm-linearlayoutitem name="linearlayoutitem17">
+                                                <wm-label padding="unset 0.5em" caption="State" fontstyle="italic" name="label23"></wm-label>
+                                            </wm-linearlayoutitem>
+                                            <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem18">
+                                                <wm-label padding="unset 0.5em" caption="bind:Variables.getNgoDetails.dataSet[$i].state" class="h4" fontweight="bold" name="label24"></wm-label>
+                                            </wm-linearlayoutitem>
+                                        </wm-linearlayout>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn54_1">
+                                        <wm-linearlayout direction="column" spacing="4" padding="4px" name="linearlayout10">
+                                            <wm-linearlayoutitem name="linearlayoutitem21">
+                                                <wm-label padding="unset 0.5em" caption="Country" fontstyle="italic" name="label27"></wm-label>
+                                            </wm-linearlayoutitem>
+                                            <wm-linearlayoutitem flexgrow="1" name="linearlayoutitem22">
+                                                <wm-label padding="unset 0.5em" caption="bind:Variables.getNgoDetails.dataSet[$i].country" class="h4" fontweight="bold" name="label28"></wm-label>
+                                            </wm-linearlayoutitem>
+                                        </wm-linearlayout>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="OrganInformation" iconclass="wi wi-file-text" name="dialog1">
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="btn-primary" caption="Close" on-click="closeDialog()" name="button1"></wm-button>
+        </wm-dialogactions>
+        <wm-liveform errormessage="" title="" iconclass="" defaultmode="Edit" dataset="bind:Variables.Wepet2OrganizationData.dataSet" captionalign="left" captionposition="top" name="OrganizationLiveForm1">
+            <wm-layoutgrid columns="2" name="layoutgrid2">
+                <wm-gridrow name="gridrow3">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn5">
+                        <wm-form-field name="name" displayname="Name" show="true" primary-key="false" generator="assigned" key="name" type="string" readonly="false" required="true" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn6">
+                        <wm-form-field name="license" displayname="License" show="true" primary-key="false" generator="assigned" key="license" type="string" readonly="false" required="false" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow4">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn7">
+                        <wm-form-field name="email" displayname="Email" show="true" primary-key="false" generator="assigned" key="email" type="string" readonly="false" required="true" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn8">
+                        <wm-form-field name="phoneNo" displayname="Phone No" show="true" primary-key="false" generator="assigned" key="phoneNo" type="integer" readonly="false" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow5">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn9">
+                        <wm-form-field name="password" displayname="Password" show="true" primary-key="false" generator="assigned" key="password" type="string" readonly="false" required="true" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn10">
+                        <wm-form-field name="approvalStatus" displayname="Approval Status" show="true" primary-key="false" generator="assigned" key="approvalStatus" type="string" readonly="false" required="true" widget="text" maxchars="20" inputtype="text"
+                            placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow6">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn11">
+                        <wm-form-field name="street" displayname="Street" show="true" primary-key="false" generator="assigned" key="street" type="string" readonly="false" required="false" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn12">
+                        <wm-form-field name="city" displayname="City" show="true" primary-key="false" generator="assigned" key="city" type="string" readonly="false" required="false" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow7">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn13">
+                        <wm-form-field name="district" displayname="District" show="true" primary-key="false" generator="assigned" key="district" type="string" readonly="false" required="false" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn14">
+                        <wm-form-field name="state" displayname="State" show="true" primary-key="false" generator="assigned" key="state" type="string" readonly="false" required="false" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow8">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn15">
+                        <wm-form-field name="country" displayname="Country" show="true" primary-key="false" generator="assigned" key="country" type="string" readonly="false" required="false" widget="text" maxchars="100" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn16">
+                        <wm-form-field name="pincode" displayname="Pincode" show="true" primary-key="false" generator="assigned" key="pincode" type="integer" readonly="false" required="false" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow9">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn17">
+                        <wm-form-field name="longitude" displayname="Longitude" show="true" primary-key="false" generator="assigned" key="longitude" type="big_decimal" readonly="false" required="false" step="1e-9" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn18">
+                        <wm-form-field name="latitude" displayname="Latitude" show="true" primary-key="false" generator="assigned" key="latitude" type="big_decimal" readonly="false" required="false" step="1e-9" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn name="gridcolumn1" columnwidth="6">
+                        <wm-form-field name="profilePic" displayname="Profile Pic" show="true" primary-key="false" generator="assigned" key="profilePic" type="string" readonly="false" required="false" widget="text" maxchars="2048"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+            <wm-form-action key="reset" display-name="Reset" show="true" class="form-reset btn-default" iconclass="wi wi-refresh" title="Reset" action="reset()" disabled="false" widget-type="button" type="button" update-mode="true"></wm-form-action>
+            <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" widget-type="button" type="submit" update-mode="true"></wm-form-action>
+        </wm-liveform>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Information" iconclass="wi wi-file-text" name="dialog2" width="700px">
+        <wm-dialogactions name="dialogactions2">
+            <wm-button class="btn-primary" caption="Close" on-click="closeDialog()" name="button4"></wm-button>
+        </wm-dialogactions>
+        <wm-liveform errormessage="" title="form" iconclass="" defaultmode="Edit" dataset="bind:Variables.editNgoDetails.dataSet" captionalign="left" captionposition="top" name="OrganizationLiveForm1_1" on-beforeservicecall="OrganizationLiveForm1_1Beforeservicecall($event, $operation, $data, options)">
+            <wm-layoutgrid columns="3" name="layoutgrid6">
+                <wm-gridrow name="gridrow25">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn52">
+                        <wm-picture resizemode="contain" name="picture2_1" picturesource="bind:Variables.getNgoDetails.dataSet[$i].profilePic" shape="circle" width="50px" height="50px"></wm-picture>
+                        <wm-fileupload cleariconclass="wi wi-clear" cleariconhint="Clear" name="fileupload2" on-select="Variables.FileServiceUploadFile6.invoke()" caption="Change"></wm-fileupload>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn53">
+                        <wm-form-field name="license" displayname="License" required="false" show="false" generator="assigned" primary-key="false" key="license" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.getNgoDetails.firstRecord.license"></wm-form-field>
+                        <wm-label padding="unset 0.5em" name="label18_1" caption="Update License" required="true"></wm-label>
+                        <wm-fileupload cleariconclass="wi wi-clear" cleariconhint="Clear" name="fileupload3" on-select="Variables.FileServiceUploadFile7.invoke()" caption="Upload"></wm-fileupload>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn54">
+                        <wm-form-field name="email" displayname="Email" required="true" show="true" generator="assigned" primary-key="false" key="email" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.getNgoDetails.firstRecord.email"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow26">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn55">
+                        <wm-form-field name="phoneNo" displayname="Phone No" required="true" show="true" generator="assigned" primary-key="false" key="phoneNo" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="number" defaultvalue="bind:Variables.getNgoDetails.dataSet[$i].phoneNo"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn56">
+                        <wm-form-field name="name" displayname="Name" required="true" show="true" generator="assigned" primary-key="false" key="name" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.getNgoDetails.firstRecord.name"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn57">
+                        <wm-form-field name="approvalStatus" displayname="Approval Status" required="true" show="false" generator="assigned" primary-key="false" key="approvalStatus" type="string" is-related="false" maxchars="20" pc-display="true" mobile-display="true"
+                            tablet-display="true" widget="text" defaultvalue="bind:Variables.getNgoDetails.firstRecord.approvalStatus"></wm-form-field>
+                        <wm-form-field name="street" displayname="Street" required="true" show="true" generator="assigned" primary-key="false" key="street" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true"
+                            tablet-display="true" widget="text" defaultvalue="bind:Variables.getNgoDetails.dataSet[$i].street"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow27">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn58">
+                        <wm-form-field name="city" displayname="City" required="true" show="true" generator="assigned" primary-key="false" key="city" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.getNgoDetails.dataSet[$i].city"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn59">
+                        <wm-form-field name="country" displayname="Country" required="true" show="true" generator="assigned" primary-key="false" key="country" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.getNgoDetails.dataSet[$i].country"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn60">
+                        <wm-form-field name="district" displayname="District" required="false" show="true" generator="assigned" primary-key="false" key="district" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.getNgoDetails.dataSet[$i].district"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow28">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn61">
+                        <wm-form-field name="state" displayname="State" required="true" show="true" generator="assigned" primary-key="false" key="state" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="text" defaultvalue="bind:Variables.getNgoDetails.dataSet[$i].state"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn62">
+                        <wm-form-field name="pincode" displayname="Pincode" required="true" show="true" generator="assigned" primary-key="false" key="pincode" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="number" defaultvalue="bind:Variables.getNgoDetails.dataSet[$i].pincode"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn63"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow29">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn64">
+                        <wm-form-field name="longitude" displayname="Longitude" required="false" show="false" generator="assigned" primary-key="false" key="longitude" type="big_decimal" is-related="false" step="1e-9" pc-display="true" mobile-display="true"
+                            tablet-display="true" widget="number" defaultvalue="bind:Variables.svGetOrgLatLng.dataSet.results[$i].geometry.location.lng"></wm-form-field>
+                        <wm-form-field name="password" displayname="Password" required="true" show="false" generator="assigned" primary-key="false" key="password" type="string" is-related="false" maxchars="100" pc-display="true" mobile-display="true"
+                            tablet-display="true" widget="text" defaultvalue="bind:Variables.getNgoDetails.dataSet[$i].password"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn65">
+                        <wm-form-field name="latitude" displayname="Latitude" required="false" show="false" generator="assigned" primary-key="false" key="latitude" type="big_decimal" is-related="false" step="1e-9" pc-display="true" mobile-display="true" tablet-display="true"
+                            widget="number" defaultvalue="bind:Variables.svGetOrgLatLng.dataSet.results[$i].geometry.location.lat"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn66">
+                        <wm-form-field name="profilePic" displayname="Profile Pic" required="false" show="false" generator="assigned" primary-key="false" key="profilePic" type="string" is-related="false" maxchars="2048" pc-display="true" mobile-display="true"
+                            tablet-display="true" widget="text" defaultvalue="bind:Variables.getNgoDetails.dataSet[$i].profilePic"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-form-field name="id" displayname="Id" required="true" show="false" generator="identity" primary-key="true" key="id" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" tablet-display="true" widget="number"></wm-form-field>
+            <wm-form-action key="reset" class="form-reset btn-default" iconclass="wi wi-refresh" action="reset()" display-name="Reset" show="true" type="button" update-mode="true"></wm-form-action>
+            <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+        </wm-liveform>
+    </wm-dialog>
+</wm-page>
